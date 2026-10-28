@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shield-point-strategies.vercel.app/sitemap.xml
