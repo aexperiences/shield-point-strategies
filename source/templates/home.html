@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}{{ b.name }} — {{ b.tagline }} · {{ b.town }}, {{ b.state }}{% endblock %}
+{% block desc %}{{ h.lede }}{% endblock %}
+{% block opening %}
+<div id="open" aria-hidden="true">
+  <svg viewBox="0 0 360 360">
+    <defs><linearGradient id="swp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff2a37" stop-opacity="0"/><stop offset="1" stop-color="#ff2a37" stop-opacity=".6"/></linearGradient></defs>
+    <path class="sweep" d="M180 180 L180 30 A150 150 0 0 1 286 74 Z"/>
+    <circle class="ring" cx="180" cy="180" r="150"/>
+    <line class="tick" x1="180" y1="14" x2="180" y2="44"/><line class="tick" x1="180" y1="316" x2="180" y2="346"/><line class="tick" x1="14" y1="180" x2="44" y2="180"/><line class="tick" x1="316" y1="180" x2="346" y2="180"/>
+    <path class="head" d="M180 92 L214 232 L180 206 L146 232 Z"/>
+    <text class="name" x="180" y="306">SHIELD <tspan class="r">POINT</tspan></text>
+  </svg>
+  <button class="skip-open">Skip</button>
+</div>
+{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <div class="kicker">{{ h.kicker }}</div>
+      <h1>{{ h.title_html|safe }}</h1>
+      <p class="lede">{{ h.lede }}</p>
+      <div class="btns"><a class="btn red" href="{{ root }}contact/">{{ h.cta_main }}</a><a class="btn" href="{{ root }}readiness/">{{ h.cta_second }}</a></div>
+    </div>
+    <div>
+      {% include "_plate.html" %}
+      <div class="layer-card" id="layer-card" aria-live="polite"></div>
+      <div class="dots" aria-label="Layers">{% for L in layers %}<button aria-label="{{ L.name }}"><i></i></button>{% endfor %}</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">On the shield</div>
+    <h2>Three words. <em>Three kinds of work.</em></h2>
+    <div class="three">
+      <div class="word rv" data-n="01"><h3>Prepared<b>ness</b></h3><p>Know where you stand. A walk of your site with a chief's eyes and a written, ranked report.</p><a href="{{ root }}services/security-assessments/">Assessments</a></div>
+      <div class="word rv" data-n="02"><h3>Plan<b>ning</b></h3><p>Plans people can run from memory, for the days that are actually likely where you are.</p><a href="{{ root }}services/emergency-planning/">Emergency planning</a></div>
+      <div class="word rv" data-n="03"><h3>Protec<b>tion</b></h3><p>Training for the people who will be there, and consulting for the agencies that answer the call.</p><a href="{{ root }}services/training/">Training</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap who">
+    <div class="pic rv"><img src="{{ root }}assets/logo-shield.png" alt="{{ b.name }} shield"></div>
+    <div class="rv">
+      <div class="kicker">Who you are talking to</div>
+      <h2>Twenty years as <em>Chief of Police.</em></h2>
+      <p class="lede">{{ b.principal }} led the {{ pr.chief_of }} for two decades and spent {{ pr.years_law_enforcement }} years in law enforcement. Today he runs safety and security for a school district of fourteen thousand five hundred students. Shield Point is that experience, offered to you.</p>
+      <div class="stat"><div><b>{{ pr.years_law_enforcement }}</b><span>years in law enforcement</span></div><div><b>{{ pr.years_chief }}</b><span>years as Chief of Police</span></div></div>
+      <a class="btn" href="{{ root }}about/">About Brian Asmus</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Who we work with</div>
+    <h2>If people gather there, <em>we can help.</em></h2>
+    <div class="sectors rv">{% for s in sectors %}<span>{{ s }}</span>{% endfor %}</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The work</div>
+    <h2>{{ p.title_html|safe }}</h2>
+    <div class="steps">{% for s in p.steps %}<div class="step rv"><div class="when">{{ s.when }}</div><div><h3>{{ s.name }}</h3><p>{{ s.text }}</p><div class="gets">{{ s.gets }}</div></div></div>{% endfor %}</div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Find out where you stand.</h2>
+    <p class="lede">Ten questions, two minutes, nothing sent anywhere unless you want it to be.</p>
+    <div class="btns"><a class="btn red" href="{{ root }}readiness/">Take the readiness check</a><a class="btn" href="tel:{{ b.phone_raw }}">Call {{ b.phone }}</a></div>
+  </div>
+</section>
+{% endblock %}

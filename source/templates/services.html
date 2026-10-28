@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Services — {{ b.name }}{% endblock %}
+{% block desc %}{{ si.lede }}{% endblock %}
+{% block main %}
+<div class="phead"><div class="wrap"><div class="kicker">{{ b.tagline }}</div><h1>{{ si.title }}</h1><p class="lede">{{ si.lede }}</p></div></div>
+<section><div class="wrap">
+  <div class="svc-list">
+    {% for s in services %}<a class="svc rv" href="{{ root }}services/{{ s.slug }}/"><span class="w">{{ s.word }}</span><h3>{{ s.name }}</h3><p>{{ s.short }}</p><span class="go">Read more →</span></a>{% endfor %}
+  </div>
+</div></section>
+<section class="alt"><div class="wrap"><div class="kicker">Questions</div><h2>Straight <em>answers.</em></h2><div class="faq">{% for f in faqs %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}</div></div></section>
+<section class="cta"><div class="wrap"><h2>Not sure which you need?</h2><p class="lede">Start with a conversation. It is free and it ends with a clear next step.</p><div class="btns"><a class="btn red" href="{{ root }}contact/">Start a conversation</a><a class="btn" href="tel:{{ b.phone_raw }}">Call {{ b.phone }}</a></div></div></section>
+{% endblock %}

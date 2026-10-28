@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}The five layers — {{ b.name }}{% endblock %}
+{% block desc %}Deter, Detect, Delay, Respond, Recover: how Shield Point Strategies thinks about keeping a place safe.{% endblock %}
+{% block main %}
+<div class="phead"><div class="wrap"><div class="kicker">How we think</div><h1>Five <em>layers.</em></h1><p class="lede">Safety is not one thing you buy. It is five layers, and each one buys the next one time. Walk down the page and watch them light.</p></div></div>
+<section><div class="wrap walk">
+  <div class="sticky">{% include "_plate.html" %}</div>
+  <div>{% for L in layers %}<div class="lyr"><div class="n">LAYER {{ L.n }}</div><h3>{{ L.name }}</h3><p><strong style="color:#fff">{{ L.short }}</strong> {{ L.text }}</p><p class="we"><b>We do</b>{{ L.we }}</p></div>{% endfor %}
+    <div style="padding:30px 0"><a class="btn red" href="{{ root }}readiness/">Check your layers</a></div>
+  </div>
+</div></section>
+{% endblock %}

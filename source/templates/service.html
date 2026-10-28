@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ s.name }} — {{ b.name }}{% endblock %}
+{% block desc %}{{ s.short }}{% endblock %}
+{% block main %}
+<div class="phead"><div class="wrap"><div class="kicker">{{ s.word }}</div><h1>{{ s.name }}</h1><p class="lede">{{ s.short }}</p></div></div>
+<section><div class="wrap two">
+  <div class="prose rv">{% for para in s.body %}<p>{{ para }}</p>{% endfor %}
+    <h3>What it covers</h3><ul>{% for pt in s.points %}<li>{{ pt }}</li>{% endfor %}</ul>
+    <div class="price">Cost <b>{{ s.price }}</b></div>
+  </div>
+  <aside class="side rv"><h4>Start here</h4><p>Thirty minutes on the phone, no charge. Tell us what you are responsible for and what worries you.</p><a class="btn red" href="{{ root }}contact/" style="width:100%">Book a conversation</a><p style="margin-top:14px"><a href="tel:{{ b.phone_raw }}">{{ b.phone }}</a> · <a href="mailto:{{ b.email }}">email</a></p>
+    <h4 style="margin-top:22px">Other services</h4>{% for o in services if o.slug != s.slug %}<p><a href="{{ root }}services/{{ o.slug }}/">{{ o.name }} →</a></p>{% endfor %}</aside>
+</div></section>
+{% endblock %}

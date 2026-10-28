@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}The readiness check — {{ b.name }}{% endblock %}
+{% block desc %}{{ r.lede }}{% endblock %}
+{% block main %}
+<div class="phead"><div class="wrap"><div class="kicker">Two minutes</div><h1>{{ r.title }}</h1><p class="lede">{{ r.lede }}</p></div></div>
+<section><div class="wrap"><div class="quiz" id="quiz">
+  <div class="bar"><i></i></div>
+  {% for q in r.questions %}<div class="qcard"><div class="ql">{{ loop.index }} of {{ r.questions|length }} · {{ layer_names[q.layer] }}</div><div class="q">{{ q.q }}</div><div class="yn"><button type="button" data-v="yes" aria-pressed="false">Yes</button><button type="button" data-v="no" aria-pressed="false">No</button></div></div>{% endfor %}
+  <div class="result" id="result" aria-live="polite">
+    <div class="kicker">Your reading</div>
+    <div class="score"></div>
+    <h3 class="rt"></h3><p class="rx" style="color:var(--grey)"></p>
+    <div class="layers"></div>
+    <p style="font-size:14px;color:var(--grey2)">Red layers scored below full. This check is a conversation starter, not an assessment — a walk of your site is.</p>
+    <div class="btns"><a class="btn red sms" href="#">Text this to Brian</a><a class="btn mail" href="#">Email it</a><a class="btn" href="tel:{{ b.phone_raw }}">Call</a></div>
+  </div>
+</div></div></section>
+{% endblock %}
