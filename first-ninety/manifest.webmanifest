@@ -1,0 +1,23 @@
+{
+ "name": "Shield Point Strategies \u2014 The First Ninety",
+ "short_name": "Shield Point",
+ "description": "A live ninety-second drill on your phone: it speaks the call, buzzes every step, and hands you your role card.",
+ "start_url": "/first-ninety/",
+ "scope": "/first-ninety/",
+ "display": "standalone",
+ "background_color": "#000000",
+ "theme_color": "#000000",
+ "icons": [
+  {
+   "src": "/assets/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

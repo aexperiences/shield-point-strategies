@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ b.name }} — The Tabletop · {{ b.town }}, {{ b.state }}{% endblock %}
+{% block opening %}
+<div id="open" data-ms="1900" aria-hidden="true"><div class="op-fan"><i></i><i></i><i></i><i></i><i></i></div><p class="op-name">SHIELD POINT<span>THE TABLETOP</span></p><button class="op-skip">Skip</button></div>
+{% endblock %}
+{% block main %}
+<section class="hero"><div class="wrap hgrid">
+  <div class="hcopy"><p class="kick">{{ b.town }}, {{ b.state }}</p>
+    <h1>Talk through the worst day <em>before it happens.</em></h1>
+    <p class="lede">A tabletop exercise is your team around a table, working through an emergency one card at a time. Run one tonight, right here — Brian runs the real ones in your building.</p>
+    <div class="btns"><a class="btn hot" href="{{ croot }}table/">Deal a scenario</a><a class="btn" href="{{ croot }}contact/">Book Brian to run one</a></div></div>
+  <div class="fan" id="fan" aria-hidden="true">
+    {% for s in tt.scenarios %}<div class="fcard" style="--i:{{ loop.index0 }};--a:{{ (loop.index0 - 1.5)|abs }}"><span>INJECT 0{{ loop.index }}</span><b>{{ s.name }}</b><p>{{ s.injects[0].text|replace('{place}','the building')|replace('{lead}','the person in charge')|replace('{people}','everyone') }}</p><i>SHIELD POINT</i></div>{% endfor %}
+  </div>
+</div></section>
+
+<section class="how"><div class="wrap">
+  <p class="kick">How it runs</p><h2>Pick. Deal. <em>Debrief.</em></h2>
+  <div class="hrow">
+    <div class="hstep rv"><b>01</b><h3>Pick</h3><p>Your kind of place and the day you are worried about.</p></div>
+    <div class="hstep rv"><b>02</b><h3>Deal</h3><p>Each card is the next thing that happens. Talk it out against the clock; say your answers out loud and it writes them down.</p></div>
+    <div class="hstep rv"><b>03</b><h3>Debrief</h3><p>At the end you get the after-action report — what you decided and what you could not answer — ready to print or send.</p></div>
+  </div>
+  <div class="tvnote rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/></svg><p><b>TV mode.</b> Put it on the conference room screen: full screen, big type, the screen stays awake, and the cards read themselves out loud.</p></div>
+</div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ croot }}tabletop.js" defer></script>{% endblock %}

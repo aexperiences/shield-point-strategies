@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ b.name }} — The First Ninety · {{ b.town }}, {{ b.state }}{% endblock %}
+{% block opening %}
+<div id="open" data-ms="1800" aria-hidden="true"><div class="op-num" id="opNum">90</div><p class="op-name">SHIELD POINT<span>THE FIRST NINETY</span></p><button class="op-skip">Skip</button></div>
+{% endblock %}
+{% block main %}
+<section class="clockscroll" id="cs" aria-label="The first ninety seconds, in order">
+  <div class="cs-sticky">
+    <p class="kick">Scroll to run the clock</p>
+    <div class="cs-clock" aria-hidden="true"><span id="csMin">0</span>:<span id="csSec">90</span></div>
+    <div class="cs-bar"><i id="csBar"></i></div>
+    <ol class="cs-lines" id="csLines">
+      <li data-at="0"><b>0:00</b>Someone sees it.</li>
+      <li data-at="8"><b>0:08</b>The word is said out loud. Plain words.</li>
+      <li data-at="20"><b>0:20</b>Doors lock. People move.</li>
+      <li data-at="35"><b>0:35</b>911 has the address and what was seen.</li>
+      <li data-at="60"><b>1:00</b>Everyone is out of sight and counted.</li>
+      <li data-at="90"><b>1:30</b>You wait — and you know you are ready.</li>
+    </ol>
+    <h1 class="cs-h">The first ninety seconds <em>are the ones you practice for.</em></h1>
+  </div>
+</section>
+
+<section class="pick"><div class="wrap">
+  <p class="kick">Run one right now</p><h2>Pick the day. <em>Pick your job.</em> Beat the clock.</h2>
+  <p class="lede">A live, timed drill on your phone. It speaks the call, buzzes on every step, and keeps your screen awake. At the end you get your role card to keep.</p>
+  <div class="chips" role="radiogroup" aria-label="Scenario" id="hS">{% for s in ninety.scenarios %}<button role="radio" data-v="{{ s.id }}" aria-checked="{{ 'true' if loop.first else 'false' }}">{{ s.name }}</button>{% endfor %}</div>
+  <div class="chips" role="radiogroup" aria-label="Your job" id="hR">{% for r in ninety.roles %}<button role="radio" data-v="{{ r.id }}" aria-checked="{{ 'true' if loop.first else 'false' }}">{{ r.name }}</button>{% endfor %}</div>
+  <a class="btn hot big" id="hGo" href="{{ croot }}drill/">Start the ninety <span aria-hidden="true">→</span></a>
+</div></section>
+
+<section class="why"><div class="wrap two">
+  <div class="rv"><p class="kick">Why it matters</p><h2>Plans fail in the first minute, <em>not the last.</em></h2>
+    <p class="lede">Most people freeze because nobody ever told them their job. Brian runs drills with your actual staff, in your actual building, until the first ninety seconds happen without thinking.</p>
+    <div class="btns"><a class="btn hot" href="{{ croot }}contact/">Book a drill with Brian</a><a class="btn" href="{{ croot }}services/">See the services</a></div></div>
+  <div class="rv quote"><b>{{ pr.years_chief }}</b><span>years as Chief of Police in Liberty Lake</span><b>{{ pr.years_law_enforcement }}</b><span>years in law enforcement</span></div>
+</div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ croot }}ninety.js" defer></script>{% endblock %}

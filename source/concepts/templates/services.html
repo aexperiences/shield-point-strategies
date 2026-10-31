@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Services — {{ b.name }}{% endblock %}
+{% block desc %}{{ si.lede }}{% endblock %}
+{% block main %}
+<div class="phead"><div class="wrap"><p class="kick">{{ b.tagline }}</p><h1>{{ si.title }}</h1><p class="lede">{{ si.lede }}</p></div></div>
+<section><div class="wrap">
+  <div class="cards">{% for s in services %}<details class="svc rv"><summary><span class="w">{{ s.word }}</span><h3>{{ s.name }}</h3><span class="s">{{ s.short }}</span></summary>
+    <div class="more">{% for para in s.body %}<p>{{ para }}</p>{% endfor %}<ul>{% for pt in s.points %}<li>{{ pt }}</li>{% endfor %}</ul><div class="price">Cost <b>{{ s.price }}</b></div></div></details>{% endfor %}</div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><p class="kick">Questions</p><div class="faq">{% for f in faqs %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}</div>
+  <div class="btns" style="margin-top:26px"><a class="btn hot" href="{{ croot }}contact/">Start a conversation</a><a class="btn" href="{{ croot }}{{ cx.core_href }}">{{ cx.core_cta }}</a></div></div></section>
+{% endblock %}

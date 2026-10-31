@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Run the drill — {{ b.name }}{% endblock %}
+{% block desc %}A live ninety-second drill on your phone: pick the scenario and your job, then beat the clock.{% endblock %}
+{% block main %}
+<section class="setup" id="setup"><div class="wrap">
+  <p class="kick">The drill</p><h1>Ninety <em>seconds.</em></h1>
+  <p class="lede">Pick the day and your job. When you press start, the call comes in out loud and the clock runs. Tap Done as you do each step.</p>
+  <h3 class="lbl">The day</h3><div class="chips" role="radiogroup" aria-label="Scenario" id="dS">{% for s in ninety.scenarios %}<button role="radio" data-v="{{ s.id }}" aria-checked="{{ 'true' if loop.first else 'false' }}">{{ s.name }}</button>{% endfor %}</div>
+  <h3 class="lbl">Your job</h3><div class="chips" role="radiogroup" aria-label="Your job" id="dR">{% for r in ninety.roles %}<button role="radio" data-v="{{ r.id }}" aria-checked="{{ 'true' if loop.first else 'false' }}">{{ r.name }}</button>{% endfor %}</div>
+  <div class="toggles"><label><input type="checkbox" id="tVoice" checked> Speak it out loud</label><label><input type="checkbox" id="tBuzz" checked> Buzz my phone</label></div>
+  <button class="btn hot big" id="dGo">Start the ninety</button>
+  <p class="note">A practice drill to learn the order of things. It does not replace your site's own plan or real training — that is what Brian is for.</p>
+</div></section>
+
+<div class="console" id="console" hidden role="dialog" aria-label="Drill running">
+  <div class="c-top"><span id="cScen"></span><button id="cQuit" aria-label="Stop the drill">Stop</button></div>
+  <div class="c-ring"><svg viewBox="0 0 200 200"><circle class="rb" cx="100" cy="100" r="88"/><circle class="rf" id="cArc" cx="100" cy="100" r="88"/></svg><div class="c-time" id="cTime">1:30</div></div>
+  <p class="c-call" id="cCall"></p>
+  <div class="c-step" id="cStep"><span id="cN"></span><b id="cTxt"></b></div>
+  <button class="c-done" id="cDone">Done</button>
+  <div class="c-dots" id="cDots"></div>
+</div>
+
+<section class="result" id="result" hidden><div class="wrap two">
+  <div><p class="kick" id="rKick">Done</p><h2 id="rHead"></h2><p class="lede" id="rLine"></p>
+    <ol class="splits" id="rSplits"></ol>
+    <div class="btns"><button class="btn" id="rAgain">Run it again</button><a class="btn hot" id="rSms" href="#">Have Brian run it with your team</a></div></div>
+  <div class="cardwrap"><canvas id="card" width="1080" height="1350" aria-label="Your role card"></canvas>
+    <div class="btns"><a class="btn hot" id="rSave" download="Shield Point — my first ninety.png" href="#">Save my card</a><button class="btn" id="rShare" hidden>Share</button></div></div>
+</div></section>
+{% endblock %}
+{% block scripts %}
+<script type="application/json" id="ninety-data">{{ ninety|tojson }}</script>
+<script src="{{ croot }}ninety.js" defer></script>
+{% endblock %}

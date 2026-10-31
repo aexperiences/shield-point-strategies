@@ -1,0 +1,5 @@
+// Shield Point — The Tabletop: opens offline. Network first, cache as the fallback.
+const C='sps-tabletop-59659834',FILES=["/tabletop/", "/tabletop/services/", "/tabletop/about/", "/tabletop/contact/", "/tabletop/table/", "/tabletop/tabletop.css", "/tabletop/tabletop.js", "/assets/kit.css", "/assets/kit.js", "/assets/logo-shield.png", "/assets/logo-lockup.png", "/assets/icon-192.png", "/assets/ae-mark.png"];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(FILES)).catch(()=>{}));self.skipWaiting();});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('sps-tabletop')&&x!==C).map(x=>caches.delete(x)))));self.clients.claim();});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;e.respondWith(fetch(e.request).then(r=>{if(r.ok){const cp=r.clone();caches.open(C).then(c=>c.put(e.request,cp));}return r;}).catch(()=>caches.match(e.request).then(m=>m||caches.match('/tabletop/'))));});

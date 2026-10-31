@@ -1,0 +1,106 @@
+{
+  "_readme": "Content for the three concept sites. Drafted from standard safety practice and Shield Point's own five layers; no statistics, no claims about any real building. Brian reviews the wording before any of this goes on his domain.",
+  "walkthrough": {
+    "buildings": [
+      {"id": "school", "name": "School", "rooms": [
+        {"x": -18, "z": -11, "w": 8, "d": 8, "label": "Office"},
+        {"x": -10, "z": -11, "w": 4, "d": 5, "label": "Entry"},
+        {"x": -6, "z": -11, "w": 12, "d": 8, "label": "Cafeteria"},
+        {"x": 6, "z": -11, "w": 12, "d": 8, "label": "Gym", "h": 5},
+        {"x": -18, "z": 1, "w": 6, "d": 10, "label": "Room 1"}, {"x": -12, "z": 1, "w": 6, "d": 10, "label": "Room 2"},
+        {"x": -6, "z": 1, "w": 6, "d": 10, "label": "Room 3"}, {"x": 0, "z": 1, "w": 6, "d": 10, "label": "Room 4"},
+        {"x": 6, "z": 1, "w": 6, "d": 10, "label": "Room 5"}, {"x": 12, "z": 1, "w": 6, "d": 10, "label": "Room 6"}],
+       "spots": [
+        {"id": "entry", "x": -8, "z": -11.5, "layer": "delay", "name": "Main entry & vestibule", "look": "Can a visitor get past the front door without being seen and let in?", "fix": "A secure vestibule: two sets of doors, the inner one released from the office, with a clear view of who is asking."},
+        {"id": "office", "x": -14, "z": -7, "layer": "detect", "name": "Front office & check-in", "look": "Who signs visitors in, what the office can see, and how they call for help without saying it out loud.", "fix": "Visitor management, a duress button or code word, and a direct sightline to the entry and the lot."},
+        {"id": "side", "x": 18.5, "z": -1, "layer": "delay", "name": "Exterior side doors", "look": "Doors propped open during the day, doors that do not latch, doors no camera sees.", "fix": "Prop alarms, closer and latch repair, and a door check every day."},
+        {"id": "class", "x": -9, "z": 6, "layer": "delay", "name": "Classroom doors", "look": "Can the teacher lock it from inside, fast, without stepping into the hall?", "fix": "Inside-locking hardware, a covered door window, and a lockdown the class has practiced."},
+        {"id": "gym", "x": 12, "z": -7, "layer": "respond", "name": "Gym & assemblies", "look": "The biggest crowd in the building — how they get out, where they go, who leads.", "fix": "Mapped exits, an assembly-specific plan, and named staff for every assembly."},
+        {"id": "lot", "x": -14, "z": -17, "layer": "deter", "name": "Parking & drop-off", "look": "Lighting, the view from the office, and where cars and kids mix.", "fix": "Lighting and signs, a drop-off plan, and cameras that cover the approach."},
+        {"id": "reunite", "x": 22, "z": 14, "layer": "recover", "name": "Reunification site", "look": "Where students go after an evacuation and how parents are checked and matched.", "fix": "A written reunification plan: the site, the roles, and a signed sign-out."}]},
+      {"id": "church", "name": "Church", "rooms": [
+        {"x": -8, "z": -6, "w": 16, "d": 14, "label": "Sanctuary", "h": 6},
+        {"x": -16, "z": -6, "w": 8, "d": 6, "label": "Lobby"},
+        {"x": -16, "z": 0, "w": 8, "d": 8, "label": "Kids wing"},
+        {"x": 8, "z": -6, "w": 9, "d": 7, "label": "Fellowship hall"},
+        {"x": 8, "z": 1, "w": 9, "d": 7, "label": "Offices"}],
+       "spots": [
+        {"id": "doors", "x": -16.5, "z": -3, "layer": "deter", "name": "Main doors & greeters", "look": "Who is at the door, what they watch for, and whether doors lock once the service starts.", "fix": "A trained greeter team, a lock-after-start routine, and a way to call for help from the door."},
+        {"id": "kids", "x": -12, "z": 4, "layer": "delay", "name": "Kids wing check-in", "look": "How children are checked in and out, and whether a stranger can walk the hallway.", "fix": "Tag-matched pickup, one controlled door into the wing, and a volunteer screening routine."},
+        {"id": "sanct", "x": 0, "z": 1, "layer": "respond", "name": "Sanctuary during service", "look": "The plan when something happens mid-service: who stands, who calls, which doors.", "fix": "A safety team with posts and signals, mapped exits, and a medical response plan."},
+        {"id": "office2", "x": 12.5, "z": 4.5, "layer": "detect", "name": "Church office", "look": "Weekday visitors, deliveries and a staff of one or two in an open building.", "fix": "A locked office door with a camera or doorbell, and a check-in routine for weekday visitors."},
+        {"id": "hall", "x": 12.5, "z": -2.5, "layer": "respond", "name": "Fellowship hall events", "look": "Dinners, funerals and rentals: crowds that are not your regulars.", "fix": "An event checklist: who is in charge, exits, first aid, and who holds the keys."},
+        {"id": "lot2", "x": 0, "z": -13, "layer": "deter", "name": "Parking lot", "look": "Lighting, walking routes and who watches the lot during service.", "fix": "Lighting, a lot volunteer during services, and cameras on the approach."},
+        {"id": "after", "x": 20, "z": 12, "layer": "recover", "name": "After an incident", "look": "How the congregation is told, how people are cared for, and what changes after.", "fix": "A communication plan, care contacts, and an after-action review."}]},
+      {"id": "office", "name": "Business", "rooms": [
+        {"x": -16, "z": -9, "w": 8, "d": 6, "label": "Lobby"},
+        {"x": -8, "z": -9, "w": 20, "d": 10, "label": "Open office"},
+        {"x": 12, "z": -9, "w": 6, "d": 6, "label": "Records"},
+        {"x": -16, "z": -3, "w": 8, "d": 8, "label": "Break room"},
+        {"x": 12, "z": -3, "w": 6, "d": 8, "label": "Manager"},
+        {"x": -8, "z": 1, "w": 20, "d": 6, "label": "Conference"}],
+       "spots": [
+        {"id": "lobby", "x": -12, "z": -9.5, "layer": "detect", "name": "Lobby & reception", "look": "Who greets visitors, what they can see, and how far a visitor gets before anyone asks.", "fix": "A reception routine, a visitor badge, and a quiet way to call for help."},
+        {"id": "badge", "x": -8, "z": -6, "layer": "delay", "name": "Doors into the office", "look": "Badge doors, tailgating, and doors that stay unlocked all day.", "fix": "Access control that is actually used, and staff who know not to hold the door."},
+        {"id": "records", "x": 15, "z": -6, "layer": "delay", "name": "Records & server room", "look": "Who can get in, and what walks out the door.", "fix": "A locked door with a log, and a short list of who holds the key."},
+        {"id": "conflict", "x": 15, "z": 1, "layer": "respond", "name": "Hard conversations", "look": "Terminations and upset customers: the moments things go wrong.", "fix": "A plan for hard conversations, de-escalation training, and a way out of the room."},
+        {"id": "break", "x": -12, "z": 1, "layer": "respond", "name": "Break room & back exit", "look": "The back door everyone uses, and where people go if they need to leave fast.", "fix": "Mapped exits, a meeting point, and drills that include the back of the building."},
+        {"id": "garage", "x": 0, "z": -16, "layer": "deter", "name": "Parking & walk-in", "look": "Lighting, late departures and the walk from the car to the door.", "fix": "Lighting, an escort habit after dark, and cameras on the approach."},
+        {"id": "cont", "x": 20, "z": 12, "layer": "recover", "name": "Back in business", "look": "After an incident, outage or threat: who decides, who tells staff, how work resumes.", "fix": "A continuity plan and an after-action review."}]}
+    ]
+  },
+  "ninety": {
+    "roles": [
+      {"id": "teacher", "name": "Teacher / Classroom"},
+      {"id": "front", "name": "Front desk"},
+      {"id": "usher", "name": "Usher / Greeter"},
+      {"id": "lead", "name": "Manager / Supervisor"}
+    ],
+    "scenarios": [
+      {"id": "lockdown", "name": "Lockdown", "call": "Lockdown. A person with a weapon has been reported inside the building.",
+       "steps": {
+        "teacher": ["Pull anyone in the hall into your room", "Lock the door", "Lights off — everyone out of sight of the door and windows", "Phones silent", "Take attendance quietly", "Wait. Only open for law enforcement"],
+        "front": ["Announce it in plain words: Lockdown, lockdown", "Call 911 — where, what you saw", "Lock the front entry", "Get out of sight", "Stay on the line with dispatch"],
+        "usher": ["Close and lock the sanctuary doors", "Get people down and away from the doors", "Make sure 911 has been called", "Keep people quiet and still", "Wait for law enforcement"],
+        "lead": ["Confirm the lockdown has been announced", "Call 911 or confirm someone has", "Lock your area and get out of sight", "Account for your people by text", "Be ready to meet law enforcement when it is safe"]}},
+      {"id": "evacuate", "name": "Evacuate", "call": "Evacuate. The fire alarm is sounding and smoke is reported in the east hall.",
+       "steps": {"all": ["Stop what you are doing and get everyone up", "Grab your roster or go-bag", "Lead out the nearest safe exit — not the east hall", "Walk to the assembly point", "Count everyone. Report anyone missing"]}},
+      {"id": "medical", "name": "Medical", "call": "Medical emergency. A person has collapsed and is not responding.",
+       "steps": {"all": ["Call 911 — or point at someone and tell them to", "Send someone for the AED and first aid kit", "Follow the dispatcher — start CPR if they tell you to", "Clear space and keep the crowd back", "Send someone to meet the responders at the door", "Note the time it happened"]}},
+      {"id": "shelter", "name": "Severe weather", "call": "Shelter. A severe storm warning has been issued for your area.",
+       "steps": {"all": ["Announce shelter", "Move everyone to inside rooms on the lowest floor", "Away from windows and glass", "Get down and cover your head", "Count everyone", "Wait for the all-clear"]}}
+    ]
+  },
+  "tabletop": {
+    "venues": [
+      {"id": "school", "name": "School", "place": "the school", "people": "students", "lead": "the principal"},
+      {"id": "church", "name": "Church", "place": "the church", "people": "the congregation", "lead": "the pastor"},
+      {"id": "business", "name": "Business", "place": "the office", "people": "staff and customers", "lead": "the manager"},
+      {"id": "event", "name": "Event or venue", "place": "the venue", "people": "the crowd", "lead": "the event lead"}
+    ],
+    "scenarios": [
+      {"id": "online", "name": "A threat made online", "injects": [
+        {"t": "T+0:00", "text": "A screenshot is forwarded to {lead}: a post naming {place} and tomorrow's date, with a threat to hurt people.", "q": ["Who is told first, and how?", "Who calls law enforcement?", "What do you do right now with the screenshot and the account?"]},
+        {"t": "T+0:45", "text": "The post is spreading. Parents and members start calling to ask whether it is safe to come tomorrow.", "q": ["Who answers the phones, and what do they say?", "When does the first message go out, and who approves it?"]},
+        {"t": "T+3:00", "text": "Law enforcement says they are investigating but cannot yet tell you who posted it.", "q": ["Do you open tomorrow? Who makes that call, and on what information?", "What changes at the doors if you open?"]},
+        {"t": "Next day 7:00 AM", "text": "{place} opens. A reporter is in the parking lot asking staff questions.", "q": ["Who speaks for {place}?", "What do staff say when a reporter asks them?"]},
+        {"t": "Day 3", "text": "Law enforcement identifies the person who posted. It is someone connected to {place}.", "q": ["What do you tell {people}?", "What do you change, and who writes it down?"]}]},
+      {"id": "storm", "name": "Severe storm, power out", "injects": [
+        {"t": "T+0:00", "text": "A severe storm warning is issued while {place} is full. The lights flicker.", "q": ["Who announces shelter, and how — if the intercom fails?", "Where does everyone go?"]},
+        {"t": "T+0:10", "text": "Power goes out. Phones work but the building is dark and the doors' electronic locks have released.", "q": ["What do you do about the doors?", "How do you find out who is where?"]},
+        {"t": "T+0:40", "text": "The storm passes. A tree is down across the main exit and one person has a cut that needs care.", "q": ["Which way do people leave?", "Who handles first aid and who calls for help?"]},
+        {"t": "T+2:00", "text": "Families start arriving to pick people up in the dark.", "q": ["How do you release people safely and know who left with whom?"]},
+        {"t": "Next day", "text": "Power is still out at {place}.", "q": ["Who decides whether to open, and how is everyone told?", "What would you change before the next storm?"]}]},
+      {"id": "package", "name": "A suspicious package", "injects": [
+        {"t": "T+0:00", "text": "A staff member finds an unattended bag by the main entrance with wires visible.", "q": ["What does that staff member do in the next minute?", "Who calls 911?"]},
+        {"t": "T+0:05", "text": "Dispatch tells you to move people away. The main entrance is the closest exit for most of {people}.", "q": ["Evacuate or shelter in place — who decides?", "Which exits, and where do people go?"]},
+        {"t": "T+0:30", "text": "Responders are on scene. Families are hearing about it from social media.", "q": ["What is the first message, and who sends it?"]},
+        {"t": "T+1:30", "text": "Responders clear the bag: it was left by a contractor.", "q": ["How do you bring everyone back in?", "What do you change about deliveries and contractors?"]}]},
+      {"id": "medical", "name": "Medical emergency in a crowd", "injects": [
+        {"t": "T+0:00", "text": "During a full gathering at {place}, someone collapses near the back.", "q": ["Who calls 911, and who gets the AED?", "Who knows CPR and where are they?"]},
+        {"t": "T+0:03", "text": "The crowd is pressing in to see. Someone is filming.", "q": ["Who controls the space, and how?"]},
+        {"t": "T+0:08", "text": "Responders are pulling up. The front lot is full of cars.", "q": ["Who meets them, and what route do they take inside?"]},
+        {"t": "T+0:40", "text": "The person is taken to the hospital. Their family is not here.", "q": ["Who contacts the family, and what is said?", "Who looks after the people who saw it?"]}]}
+    ]
+  }
+}

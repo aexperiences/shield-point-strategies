@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Run a tabletop — {{ b.name }}{% endblock %}
+{% block desc %}Run a tabletop exercise in your browser: pick the place and the scenario, deal the cards, and keep the after-action report.{% endblock %}
+{% block main %}
+<section class="setup" id="setup"><div class="wrap">
+  <p class="kick">The table</p><h1>Set the <em>table.</em></h1>
+  <h3 class="lbl">Your kind of place</h3><div class="chips" id="tV">{% for v in tt.venues %}<button data-v="{{ v.id }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ v.name }}</button>{% endfor %}</div>
+  <h3 class="lbl">The day</h3><div class="chips" id="tS">{% for s in tt.scenarios %}<button data-v="{{ s.id }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ s.name }}</button>{% endfor %}</div>
+  <div class="toggles"><label><input type="checkbox" id="oRead" checked> Read the cards out loud</label><label><input type="checkbox" id="oTV"> TV mode (full screen)</label></div>
+  <button class="btn hot big" id="tGo">Deal the first card</button>
+</div></section>
+
+<section class="table" id="table" hidden aria-label="The table">
+  <div class="felt">
+    <div class="t-top"><span id="tTitle"></span><span id="tProg"></span><button id="tExit">End</button></div>
+    <div class="t-play">
+      <button class="deck" id="deck" aria-label="Deal the next card"><i></i><i></i><i></i><span>Tap to deal</span></button>
+      <div class="slot" id="slot"></div>
+    </div>
+    <div class="t-work" id="work" hidden>
+      <div class="timer"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26" class="tb"/><circle cx="30" cy="30" r="26" class="tf" id="tArc"/></svg><button id="tClock">3:00</button></div>
+      <label class="ans"><span>What did the team decide?</span><textarea id="tAns" placeholder="Type it — or tap the mic and say it."></textarea></label>
+      <div class="wbtns"><button class="btn" id="tMic" hidden>🎙 Say it</button><button class="btn" id="tFlag" aria-pressed="false">Mark: we don't know</button><button class="btn hot" id="tNext">Next card →</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="aar" id="aar" hidden><div class="wrap">
+  <div class="aar-doc" id="aarDoc"></div>
+  <div class="btns noprint"><button class="btn hot" id="aPrint">Print or save as PDF</button><a class="btn" id="aMail" href="#">Send it to Brian</a><button class="btn" id="aAgain">Run another</button></div>
+</div></section>
+{% endblock %}
+{% block scripts %}
+<script type="application/json" id="tt-data">{{ tt|tojson }}</script>
+<script src="{{ croot }}tabletop.js" defer></script>
+{% endblock %}

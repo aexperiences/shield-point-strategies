@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}{{ b.name }} — The Walkthrough · {{ b.town }}, {{ b.state }}{% endblock %}
+{% block opening %}
+<div id="open" data-ms="1900" aria-hidden="true">
+  <svg viewBox="0 0 400 300" class="op-iso">
+    <g class="op-lines">
+      <path d="M200 60 L340 130 L200 200 L60 130 Z"/><path d="M60 130 L60 170 L200 240 L340 170 L340 130"/><path d="M200 200 L200 240"/>
+      <path d="M130 95 L270 165"/><path d="M95 112 L235 182"/><path d="M165 77 L305 147"/>
+    </g>
+    <circle class="op-spot" cx="200" cy="130" r="7"/><circle class="op-ring" cx="200" cy="130" r="7"/>
+  </svg>
+  <p class="op-name">SHIELD <b>POINT</b><span>THE WALKTHROUGH</span></p>
+  <button class="op-skip">Skip</button>
+</div>
+{% endblock %}
+{% block main %}
+<section class="viewer" aria-label="The walkthrough — a 3D building with its weak spots">
+  <div class="stage" id="stage"><canvas id="gl" aria-hidden="true"></canvas><div class="markers" id="markers"></div><div class="scanline" id="scanline"></div></div>
+  <div class="hud hud-top">
+    <div class="bld" role="tablist" aria-label="Building">{% for bl in wt.buildings %}<button role="tab" data-b="{{ bl.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ bl.name }}</button>{% endfor %}</div>
+    <div class="layers" aria-label="Layers">{% for L in layers %}<button data-l="{{ L.id }}" aria-pressed="true" title="{{ L.short }}"><i></i>{{ L.name }}</button>{% endfor %}</div>
+  </div>
+  <div class="hud hud-intro" id="intro"><p class="kick">{{ b.town }}, {{ b.state }}</p><h1>Walk your building <em>the way he would.</em></h1><p>Spin it with a finger. Tap a red point to see what a police chief of twenty years looks for there, and the fix.</p></div>
+  <div class="hud hud-tools">
+    <button class="tool" id="bScan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4M3 12h18"/></svg>Scan</button>
+    <button class="tool" id="bTour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9z"/></svg>Tour</button>
+    <button class="tool" id="bTilt" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M3 9c-1 2-1 4 0 6M21 9c1 2 1 4 0 6"/></svg>Tilt</button>
+    <button class="tool list" id="bList"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>My list <b id="nList">0</b></button>
+  </div>
+  <article class="panel" id="panel" aria-live="polite" hidden>
+    <button class="px" id="pClose" aria-label="Close">×</button>
+    <p class="pl" id="pLayer"></p><h2 id="pName"></h2>
+    <p class="pq"><b>He looks for</b><span id="pLook"></span></p><p class="pq"><b>The fix</b><span id="pFix"></span></p>
+    <div class="btns"><button class="btn hot" id="pAdd">Add to my walkthrough</button><button class="btn" id="pNext">Next point →</button></div>
+  </article>
+  <article class="panel listp" id="listp" hidden>
+    <button class="px" id="lClose" aria-label="Close">×</button>
+    <p class="pl">Your walkthrough</p><h2>What you want walked</h2>
+    <ol id="lItems"></ol><p class="note" id="lEmpty">Tap any red point, then "Add to my walkthrough".</p>
+    <div class="btns"><a class="btn hot" id="lSms" href="#">Text it to Brian</a><a class="btn" id="lMail" href="#">Email it</a></div>
+  </article>
+  <noscript><p class="wrap">The 3D walkthrough needs JavaScript. Call {{ b.phone }} to book a real one.</p></noscript>
+</section>
+
+<section class="legend"><div class="wrap">
+  <p class="kick">The five layers</p><h2>Every red point sits on <em>one of five layers.</em></h2>
+  <div class="lgrid">{% for L in layers %}<div class="lg rv" style="--d:{{ loop.index0 }}"><b>{{ L.n }}</b><h3>{{ L.name }}</h3><p>{{ L.short }}</p></div>{% endfor %}</div>
+</div></section>
+
+<section class="steps"><div class="wrap">
+  <p class="kick">The real one</p><h2>This is the sample. <em>The real walk is your building.</em></h2>
+  <div class="srow">{% for s in p.steps %}<div class="st rv"><span>{{ s.when }}</span><h3>{{ s.name }}</h3><p>{{ s.text }}</p><b>{{ s.gets }}</b></div>{% endfor %}</div>
+  <div class="btns" style="margin-top:28px"><a class="btn hot" href="{{ croot }}contact/">Book the real walkthrough</a><a class="btn" href="tel:{{ b.phone_raw }}">Call {{ b.phone }}</a></div>
+</div></section>
+{% endblock %}
+{% block scripts %}
+<script type="application/json" id="wt-data">{{ {'buildings': wt.buildings, 'layers': layers}|tojson }}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="{{ croot }}walkthrough.js"></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{
+ "name": "Shield Point Strategies \u2014 The Tabletop",
+ "short_name": "Shield Point",
+ "description": "Run a tabletop exercise in your browser: deal the cards, talk it out, keep the after-action report.",
+ "start_url": "/tabletop/",
+ "scope": "/tabletop/",
+ "display": "standalone",
+ "background_color": "#0a0a0b",
+ "theme_color": "#0a0a0b",
+ "icons": [
+  {
+   "src": "/assets/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
