@@ -57,3 +57,13 @@ for cx in CONCEPTS:
       "self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('sps-" + cx['slug'] + "')&&x!==C).map(x=>caches.delete(x)))));self.clients.claim();});\n"
       "self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.origin!==location.origin)return;e.respondWith(fetch(e.request).then(r=>{if(r.ok){const cp=r.clone();caches.open(C).then(c=>c.put(e.request,cp));}return r;}).catch(()=>caches.match(e.request).then(m=>m||caches.match('/" + cx['slug'] + "/'))));});\n")
     print('built', cx['slug'], len(pages), 'pages, cache', h)
+
+# the concept pages join the sitemap the main build wrote
+sm = os.path.join(OUT, 'sitemap.xml')
+if os.path.exists(sm):
+    x = open(sm).read(); extra = ''
+    for cx in CONCEPTS:
+        for sub in [''] + ['services/', 'about/', 'contact/'] + [e[0] for e in cx['extra']]:
+            u = base + cx['slug'] + '/' + sub
+            if u not in x: extra += '<url><loc>%s</loc></url>\n' % u
+    open(sm, 'w').write(x.replace('</urlset>', extra + '</urlset>'))

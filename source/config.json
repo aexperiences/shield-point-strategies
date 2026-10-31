@@ -4,7 +4,11 @@
     "name": "Shield Point Strategies",
     "short": "Shield Point",
     "tagline": "Preparedness · Planning · Protection",
-    "words": ["Preparedness", "Planning", "Protection"],
+    "words": [
+      "Preparedness",
+      "Planning",
+      "Protection"
+    ],
     "kind": "Safety, security and emergency-preparedness consulting",
     "town": "Liberty Lake",
     "state": "Washington",
@@ -16,25 +20,24 @@
     "email_note": "CONFIRM — the sps@ address Brian gives out; swap for a shieldpoint domain address when he has one.",
     "principal": "Brian Asmus",
     "principal_title": "Founder & Principal",
-    "lat": 47.6727, "lon": -117.0945, "tz": "America/Los_Angeles"
+    "lat": 47.6727,
+    "lon": -117.0945,
+    "tz": "America/Los_Angeles"
   },
   "principal_record": {
-    "_note": "All from public record: KREM (Aug 2020), Central Valley School District site, The Org, Spokesman-Review. CONFIRM wording with Brian.",
+    "_note": "Public record only: KREM (Aug 2020), Central Valley School District site, Spokesman-Review, Liberty Lake Splash, Anthony. Education and earlier service were dropped Oct 31 2026: their only source (The Org) also got his years as chief wrong. Add back only when Brian confirms.",
     "years_law_enforcement": "30",
     "years_chief": "20",
     "chief_of": "Liberty Lake Police Department",
     "chief_detail": "Led the Liberty Lake Police Department from its founding through two decades, building the department, its K-9 program and its community-policing model.",
-    "current": "School Safety & Security Supervisor, Central Valley School District (since September 2020) — safety and security for a district of 14,500 students across Spokane Valley and Liberty Lake.",
+    "current": "leading school safety and security for Central Valley School District since September 2020 — a district of fourteen thousand five hundred students across Spokane Valley and Liberty Lake.",
     "boards": [
       "Liberty Lake Fire Commissioner",
-      "Vice Chair, Spokane Regional Emergency Communications board",
-      "Founding member and past president, Rotary Club of Liberty Lake"
+      "Served as Vice Chair, Spokane Regional Emergency Communications board",
+      "Helped establish the Rotary Club of Liberty Lake; past president"
     ],
-    "education": [
-      "B.A., Organizational Leadership — Patten University",
-      "B.A., Business — Pacific Lutheran University"
-    ],
-    "earlier": "Police officer, City of Yelm, Washington — eleven years before Liberty Lake."
+    "education": [],
+    "earlier": ""
   },
   "hero": {
     "kicker": "Liberty Lake, Washington",
@@ -44,69 +47,259 @@
     "cta_second": "Take the readiness check"
   },
   "layers": [
-    {"id": "deter", "n": "01", "name": "Deter", "short": "Make it obvious this place is ready.", "text": "Lighting, sightlines, visible controls, posture and presence. Most trouble goes where it is easiest; the first layer makes sure that is not here.", "we": "Site walk, perimeter and entry review, visitor-management recommendations."},
-    {"id": "detect", "n": "02", "name": "Detect", "short": "See it early, from where you are.", "text": "Cameras that are watched, alarms that mean something, staff who know what unusual looks like and have a way to say so.", "we": "Camera and alarm coverage review, reporting pathways, threat-assessment team setup."},
-    {"id": "delay", "n": "03", "name": "Delay", "short": "Buy the minutes that matter.", "text": "Controlled entries, locked classrooms and offices, interior doors that hold, a building that slows a threat long enough for people to move and responders to arrive.", "we": "Access-control and door-hardware review, secure-entry design, lockdown procedures."},
-    {"id": "respond", "n": "04", "name": "Respond", "short": "Everyone knows their job.", "text": "A plan people have actually practiced. Who calls, who moves, who locks, who talks to the responders, and how it all gets communicated in the first ninety seconds.", "we": "Emergency operations plans, drills and tabletop exercises, staff training, law-enforcement coordination."},
-    {"id": "recover", "n": "05", "name": "Recover", "short": "Get back to normal, on purpose.", "text": "Reunification, communication with families and the public, support for the people involved, and an honest look at what to change.", "we": "Reunification planning, after-action review, continuity planning."}
+    {
+      "id": "deter",
+      "n": "01",
+      "name": "Deter",
+      "short": "Make it obvious this place is ready.",
+      "text": "Lighting, sightlines, visible controls, posture and presence. Most trouble goes where it is easiest; the first layer makes sure that is not here.",
+      "we": "Site walk, perimeter and entry review, visitor-management recommendations."
+    },
+    {
+      "id": "detect",
+      "n": "02",
+      "name": "Detect",
+      "short": "See it early, from where you are.",
+      "text": "Cameras that are watched, alarms that mean something, staff who know what unusual looks like and have a way to say so.",
+      "we": "Camera and alarm coverage review, reporting pathways, threat-assessment team setup."
+    },
+    {
+      "id": "delay",
+      "n": "03",
+      "name": "Delay",
+      "short": "Buy the minutes that matter.",
+      "text": "Controlled entries, locked classrooms and offices, interior doors that hold, a building that slows a threat long enough for people to move and responders to arrive.",
+      "we": "Access-control and door-hardware review, secure-entry design, lockdown procedures."
+    },
+    {
+      "id": "respond",
+      "n": "04",
+      "name": "Respond",
+      "short": "Everyone knows their job.",
+      "text": "A plan people have actually practiced. Who calls, who moves, who locks, who talks to the responders, and how it all gets communicated in the first ninety seconds.",
+      "we": "Emergency operations plans, drills and tabletop exercises, staff training, law-enforcement coordination."
+    },
+    {
+      "id": "recover",
+      "n": "05",
+      "name": "Recover",
+      "short": "Get back to normal, on purpose.",
+      "text": "Reunification, communication with families and the public, support for the people involved, and an honest look at what to change.",
+      "we": "Reunification planning, after-action review, continuity planning."
+    }
   ],
-  "services_intro": {"title": "What we do", "lede": "Three words on the shield, three kinds of work. Every engagement starts with a conversation and a walk through your building."},
+  "services_intro": {
+    "title": "What we do",
+    "lede": "Three words on the shield, three kinds of work. Every engagement starts with a conversation and a walk through your building."
+  },
   "services": [
-    {"slug": "security-assessments", "word": "Preparedness", "name": "Security & Safety Assessments", "short": "A full walk of your site with a chief's eyes, and a written report you can act on.",
-     "body": ["We walk your property the way someone looking for a weakness would, then the way a first responder would arrive. Entries, sightlines, lighting, locks, cameras, visitor flow, where people gather and how they would get out.",
-              "You get a plain-language report ranked by what matters most, not a sales sheet for equipment. Most of what we recommend costs little or nothing."],
-     "points": ["Schools, churches, offices, retail, clinics and public buildings", "Entry, perimeter and interior review", "Camera, alarm and access-control coverage", "Ranked findings with practical fixes"],
-     "price": "ask us"},
-    {"slug": "emergency-planning", "word": "Planning", "name": "Emergency Operations Planning", "short": "Plans people can run from memory, built for your building and your people.",
-     "body": ["A plan that lives in a binder nobody has opened is not a plan. We build emergency operations plans for the events that are actually likely where you are — intruder, fire, medical, weather, utility failure, a threat made online — and keep them short enough to use.",
-              "Then we test them with your team, on paper and on your feet, until the plan matches the building."],
-     "points": ["Emergency operations plans and lockdown procedures", "Reunification and family-communication plans", "Tabletop exercises and walk-through drills", "Coordination with local police, fire and dispatch"],
-     "price": "ask us"},
-    {"slug": "training", "word": "Protection", "name": "Training", "short": "For staff, leadership, boards and volunteers — what to notice, what to do, what to say.",
-     "body": ["Most people freeze because nobody ever told them what their job is on a bad day. We teach it in plain terms: situational awareness, recognizing concerning behavior, de-escalation, what to do in the first minute of an emergency, and how to work with responders when they arrive.",
-              "Sessions are built for your audience — teachers, ushers, front-desk staff, managers, boards — and fit into a staff meeting or a half day."],
-     "points": ["Emergency response for staff and volunteers", "Situational awareness and de-escalation", "Front-desk and visitor-management training", "Leadership and crisis-decision training"],
-     "price": "ask us"},
-    {"slug": "agency-consulting", "word": "Protection", "name": "Law Enforcement & Public-Agency Consulting", "short": "Twenty years running a department, offered to yours.",
-     "body": ["Policy review, leadership development, program design, community-policing strategy, emergency-communications planning and the hundred practical questions of running a small agency well.",
-              "Chief Asmus built the Liberty Lake Police Department from its founding and sits on the regional emergency-communications board. If you are standing up a program, reviewing one, or preparing for an assessment, that experience is available to you."],
-     "points": ["Policy and procedure review", "Leadership and succession development", "Program and K-9 unit design", "Emergency-communications and dispatch planning", "Preparation for accreditation and outside review"],
-     "price": "ask us"}
+    {
+      "slug": "security-assessments",
+      "word": "Preparedness",
+      "name": "Security & Safety Assessments",
+      "short": "A full walk of your site with a chief's eyes, and a written report you can act on.",
+      "body": [
+        "We walk your property the way someone looking for a weakness would, then the way a first responder would arrive. Entries, sightlines, lighting, locks, cameras, visitor flow, where people gather and how they would get out.",
+        "You get a plain-language report ranked by what matters most, not a sales sheet for equipment. Most of what we recommend costs little or nothing."
+      ],
+      "points": [
+        "Schools, churches, offices, retail, clinics and public buildings",
+        "Entry, perimeter and interior review",
+        "Camera, alarm and access-control coverage",
+        "Ranked findings with practical fixes"
+      ],
+      "price": "ask us"
+    },
+    {
+      "slug": "emergency-planning",
+      "word": "Planning",
+      "name": "Emergency Operations Planning",
+      "short": "Plans people can run from memory, built for your building and your people.",
+      "body": [
+        "A plan that lives in a binder nobody has opened is not a plan. We build emergency operations plans for the events that are actually likely where you are — intruder, fire, medical, weather, utility failure, a threat made online — and keep them short enough to use.",
+        "Then we test them with your team, on paper and on your feet, until the plan matches the building."
+      ],
+      "points": [
+        "Emergency operations plans and lockdown procedures",
+        "Reunification and family-communication plans",
+        "Tabletop exercises and walk-through drills",
+        "Coordination with local police, fire and dispatch"
+      ],
+      "price": "ask us"
+    },
+    {
+      "slug": "training",
+      "word": "Protection",
+      "name": "Training",
+      "short": "For staff, leadership, boards and volunteers — what to notice, what to do, what to say.",
+      "body": [
+        "Most people freeze because nobody ever told them what their job is on a bad day. We teach it in plain terms: situational awareness, recognizing concerning behavior, de-escalation, what to do in the first minute of an emergency, and how to work with responders when they arrive.",
+        "Sessions are built for your audience — teachers, ushers, front-desk staff, managers, boards — and fit into a staff meeting or a half day."
+      ],
+      "points": [
+        "Emergency response for staff and volunteers",
+        "Situational awareness and de-escalation",
+        "Front-desk and visitor-management training",
+        "Leadership and crisis-decision training"
+      ],
+      "price": "ask us"
+    },
+    {
+      "slug": "agency-consulting",
+      "word": "Protection",
+      "name": "Law Enforcement & Public-Agency Consulting",
+      "short": "Twenty years running a department, offered to yours.",
+      "body": [
+        "Policy review, leadership development, program design, community-policing strategy, emergency-communications planning and the hundred practical questions of running a small agency well.",
+        "Chief Asmus built the Liberty Lake Police Department from its founding and sits on the regional emergency-communications board. If you are standing up a program, reviewing one, or preparing for an assessment, that experience is available to you."
+      ],
+      "points": [
+        "Policy and procedure review",
+        "Leadership and succession development",
+        "Program and K-9 unit design",
+        "Emergency-communications and dispatch planning",
+        "Preparation for accreditation and outside review"
+      ],
+      "price": "ask us"
+    }
   ],
-  "sectors": ["Schools & districts", "Churches & places of worship", "Businesses & offices", "Clinics & care facilities", "Cities, districts & agencies", "Events & venues"],
-  "process": {"title_html": "How an engagement <em>runs</em>", "steps": [
-    {"when": "First", "name": "A conversation", "text": "What worries you, what has happened, what you have in place. Thirty minutes, no charge.", "gets": "A clear next step"},
-    {"when": "Then", "name": "The walk", "text": "We walk your site with you, inside and out, and talk to the people who are there every day.", "gets": "Findings, ranked"},
-    {"when": "Next", "name": "The plan", "text": "A written report and, where you want it, the plans and training to close the gaps.", "gets": "A plan you can run"},
-    {"when": "After", "name": "The practice", "text": "Drills and tabletop exercises on a schedule that fits you, and a check-in when things change.", "gets": "People who know their job"}
-  ]},
+  "sectors": [
+    "Schools & districts",
+    "Churches & places of worship",
+    "Businesses & offices",
+    "Clinics & care facilities",
+    "Cities, districts & agencies",
+    "Events & venues"
+  ],
+  "process": {
+    "title_html": "How an engagement <em>runs</em>",
+    "steps": [
+      {
+        "when": "First",
+        "name": "A conversation",
+        "text": "What worries you, what has happened, what you have in place. Thirty minutes, no charge.",
+        "gets": "A clear next step"
+      },
+      {
+        "when": "Then",
+        "name": "The walk",
+        "text": "We walk your site with you, inside and out, and talk to the people who are there every day.",
+        "gets": "Findings, ranked"
+      },
+      {
+        "when": "Next",
+        "name": "The plan",
+        "text": "A written report and, where you want it, the plans and training to close the gaps.",
+        "gets": "A plan you can run"
+      },
+      {
+        "when": "After",
+        "name": "The practice",
+        "text": "Drills and tabletop exercises on a schedule that fits you, and a check-in when things change.",
+        "gets": "People who know their job"
+      }
+    ]
+  },
   "readiness": {
     "title": "The readiness check",
     "lede": "Ten honest questions. Two minutes. Nothing is sent anywhere unless you choose to send it.",
     "questions": [
-      {"layer": "deter", "q": "Can a visitor walk into your building without passing a person or a locked door?", "good": false},
-      {"layer": "deter", "q": "Is the outside of your building lit at night, with clear sightlines to every entrance?", "good": true},
-      {"layer": "detect", "q": "If a camera caught something right now, would anyone see it within a minute?", "good": true},
-      {"layer": "detect", "q": "Do your staff have a simple way to report something that feels wrong — and know it will be taken seriously?", "good": true},
-      {"layer": "delay", "q": "Can every room where people gather be locked from the inside, quickly, without a key hunt?", "good": true},
-      {"layer": "delay", "q": "Are there doors that get propped open during the day?", "good": false},
-      {"layer": "respond", "q": "Has your team run a drill — any drill — in the last twelve months?", "good": true},
-      {"layer": "respond", "q": "Does every staff member know who calls 911, who locks down, and who talks to responders?", "good": true},
-      {"layer": "recover", "q": "If you had to evacuate, do you have a written plan for reuniting people with their families?", "good": true},
-      {"layer": "recover", "q": "After your last incident or close call, did anyone write down what to change?", "good": true}
+      {
+        "layer": "deter",
+        "q": "Can a visitor walk into your building without passing a person or a locked door?",
+        "good": false
+      },
+      {
+        "layer": "deter",
+        "q": "Is the outside of your building lit at night, with clear sightlines to every entrance?",
+        "good": true
+      },
+      {
+        "layer": "detect",
+        "q": "If a camera caught something right now, would anyone see it within a minute?",
+        "good": true
+      },
+      {
+        "layer": "detect",
+        "q": "Do your staff have a simple way to report something that feels wrong — and know it will be taken seriously?",
+        "good": true
+      },
+      {
+        "layer": "delay",
+        "q": "Can every room where people gather be locked from the inside, quickly, without a key hunt?",
+        "good": true
+      },
+      {
+        "layer": "delay",
+        "q": "Are there doors that get propped open during the day?",
+        "good": false
+      },
+      {
+        "layer": "respond",
+        "q": "Has your team run a drill — any drill — in the last twelve months?",
+        "good": true
+      },
+      {
+        "layer": "respond",
+        "q": "Does every staff member know who calls 911, who locks down, and who talks to responders?",
+        "good": true
+      },
+      {
+        "layer": "recover",
+        "q": "If you had to evacuate, do you have a written plan for reuniting people with their families?",
+        "good": true
+      },
+      {
+        "layer": "recover",
+        "q": "After your last incident or close call, did anyone write down what to change?",
+        "good": true
+      }
     ],
     "readings": [
-      {"min": 0, "max": 4, "title": "Start with the walk.", "text": "There are real gaps here, and most of them are fixable without buying anything. The right first step is a site walk and a ranked list."},
-      {"min": 5, "max": 7, "title": "Good bones, thin in places.", "text": "You have the basics. The layers that scored low are where the next incident will find you — let's close those first."},
-      {"min": 8, "max": 10, "title": "Well prepared. Keep it sharp.", "text": "You are ahead of most. The work now is practice: drills, a tabletop exercise, and a second set of eyes on the plan."}
+      {
+        "min": 0,
+        "max": 4,
+        "title": "Start with the walk.",
+        "text": "There are real gaps here, and most of them are fixable without buying anything. The right first step is a site walk and a ranked list."
+      },
+      {
+        "min": 5,
+        "max": 7,
+        "title": "Good bones, thin in places.",
+        "text": "You have the basics. The layers that scored low are where the next incident will find you — let's close those first."
+      },
+      {
+        "min": 8,
+        "max": 10,
+        "title": "Well prepared. Keep it sharp.",
+        "text": "You are ahead of most. The work now is practice: drills, a tabletop exercise, and a second set of eyes on the plan."
+      }
     ]
   },
   "faqs": [
-    {"q": "Do you only work with schools?", "a": "No. Schools are a large part of the work, but the same layers protect a church on Sunday, a clinic lobby, a small office or a city building. If people gather there, we can help."},
-    {"q": "Are you going to tell us to buy a lot of equipment?", "a": "No. Most findings are about doors, habits, sightlines and who knows what. Where equipment genuinely helps, we say so and tell you what matters and what does not."},
-    {"q": "What does an engagement cost?", "a": "It depends on the size of the site and what you need after the walk. The first conversation is free; after that you get a clear quote before any work starts. Ask us."},
-    {"q": "How far do you travel?", "a": "We are based in Liberty Lake, Washington and work across the Inland Northwest. For work farther out, ask — it often works."}
+    {
+      "q": "Do you only work with schools?",
+      "a": "No. Schools are a large part of the work, but the same layers protect a church on Sunday, a clinic lobby, a small office or a city building. If people gather there, we can help."
+    },
+    {
+      "q": "Are you going to tell us to buy a lot of equipment?",
+      "a": "No. Most findings are about doors, habits, sightlines and who knows what. Where equipment genuinely helps, we say so and tell you what matters and what does not."
+    },
+    {
+      "q": "What does an engagement cost?",
+      "a": "It depends on the size of the site and what you need after the walk. The first conversation is free; after that you get a clear quote before any work starts. Ask us."
+    },
+    {
+      "q": "How far do you travel?",
+      "a": "We are based in Liberty Lake, Washington and work across the Inland Northwest. For work farther out, ask — it often works."
+    }
   ],
-  "contact": {"title": "Start with a conversation", "lede": "Tell us what you are responsible for and what worries you. We will come back to you directly — no sales team, no form that disappears.", "button": "Send it"},
-  "legal": {"entity_note": "CONFIRM — show the legal entity line in the footer once Brian confirms which entity the business operates under."}
+  "contact": {
+    "title": "Start with a conversation",
+    "lede": "Tell us what you are responsible for and what worries you. We will come back to you directly — no sales team, no form that disappears.",
+    "button": "Send it"
+  },
+  "legal": {
+    "entity_note": "CONFIRM — show the legal entity line in the footer once Brian confirms which entity the business operates under."
+  }
 }

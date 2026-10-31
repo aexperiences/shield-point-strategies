@@ -7,9 +7,9 @@
   <div class="prose rv">
     <p>{{ pr.chief_detail }} When the City of Liberty Lake stood up its own police department, Brian was the chief who built it — the officers, the technology, the K-9 program, and a community-policing approach that treated education and visibility as seriously as enforcement.</p>
     <p>In 2020 he retired from the department to take on a different front line: {{ pr.current }}</p>
-    <p>{{ pr.earlier }}</p>
-    <h3>Serving alongside</h3><ul>{% for x in pr.boards %}<li>{{ x }}</li>{% endfor %}</ul>
-    <h3>Education</h3><ul>{% for x in pr.education %}<li>{{ x }}</li>{% endfor %}</ul>
+    {% if pr.earlier %}<p>{{ pr.earlier }}</p>{% endif %}
+    <h3>Public service</h3><ul>{% for x in pr.boards %}<li>{{ x }}</li>{% endfor %}</ul>
+    {% if pr.education %}<h3>Education</h3><ul>{% for x in pr.education %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
     <h3>Why Shield Point</h3>
     <p>Most places that need a security plan cannot hire a police chief. Shield Point Strategies exists so they do not have to: the same judgment that ran a department and protects a school district, brought to your building for the time it takes to get it right.</p>
   </div>

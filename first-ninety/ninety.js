@@ -73,7 +73,7 @@
   function finish(timeUp) {
     run.done = true; cancelAnimationFrame(run.raf); closeConsole();
     var total = run.splits.length ? run.splits[run.splits.length - 1] : LIMIT, n = run.splits.length, all = run.steps.length;
-    $('#rKick').textContent = timeUp ? 'Time' : 'Done'; $('#rHead').innerHTML = timeUp ? 'Ninety <em>gone.</em>' : fmt(total).replace(/^0:/, '') + ' <em>seconds.</em>';
+    $('#rKick').textContent = timeUp ? 'Time' : 'Done'; $('#rHead').innerHTML = timeUp ? 'Ninety <em>gone.</em>' : (total < 60 ? String(Math.max(1, Math.round(total))) + ' <em>seconds.</em>' : fmt(total) + ' <em>flat.</em>');
     $('#rLine').textContent = timeUp ? 'You got ' + n + ' of ' + all + ' steps in ninety seconds. That gap is what practice closes.' : 'All ' + all + ' steps, with ' + Math.round(LIMIT - total) + ' seconds to spare. Now do it with your whole team.';
     var prev = 0; $('#rSplits').innerHTML = run.steps.map(function (st, k) { var t = run.splits[k]; var li = '<li' + (t == null ? ' class="miss"' : '') + '><span>' + (k + 1) + '. ' + SPS.esc(st) + '</span><b>' + (t == null ? 'missed' : '+' + (t - prev).toFixed(1) + 's') + '</b></li>'; if (t != null) prev = t; return li; }).join('');
     var msg = 'Hi Brian — I ran the Shield Point "' + run.sc.name + '" drill as ' + run.role.name + ': ' + (timeUp ? n + ' of ' + all + ' steps in ninety seconds.' : 'all ' + all + ' steps in ' + Math.round(total) + ' seconds.') + ' I want you to run it with our team.';

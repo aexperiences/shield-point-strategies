@@ -8,9 +8,9 @@
     <div class="stat"><div><b>{{ pr.years_law_enforcement }}</b><span>years in law enforcement</span></div><div><b>{{ pr.years_chief }}</b><span>years as Chief of Police</span></div></div>
     <p>{{ pr.chief_detail }}</p>
     <p>In 2020 he retired from the department to take on a different front line: {{ pr.current }}</p>
-    <p>{{ pr.earlier }}</p>
-    <h3>Serving alongside</h3><ul>{% for x in pr.boards %}<li>{{ x }}</li>{% endfor %}</ul>
-    <h3>Education</h3><ul>{% for x in pr.education %}<li>{{ x }}</li>{% endfor %}</ul>
+    {% if pr.earlier %}<p>{{ pr.earlier }}</p>{% endif %}
+    <h3>Public service</h3><ul>{% for x in pr.boards %}<li>{{ x }}</li>{% endfor %}</ul>
+    {% if pr.education %}<h3>Education</h3><ul>{% for x in pr.education %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
     <h3>Why Shield Point</h3><p>Most places that need a security plan cannot hire a police chief. Shield Point Strategies exists so they do not have to: the same judgment that ran a department and protects a school district, brought to your building for the time it takes to get it right.</p>
   </div>
   <aside class="side rv"><img src="{{ root }}assets/logo-shield.png" alt="" style="width:110px;margin-bottom:14px"><h3>{{ b.name }}</h3><p>{{ b.tagline }}<br>{{ b.town }}, {{ b.state }}</p><a class="btn hot" style="width:100%" href="{{ croot }}contact/">Talk to Brian</a></aside>
