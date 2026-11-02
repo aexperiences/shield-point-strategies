@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block title %}About Brian Asmus — {{ b.name }}{% endblock %}
-{% block desc %}{{ b.principal }}, {{ pr.years_chief }} years Chief of Police in Liberty Lake, Washington, {{ pr.years_law_enforcement }} years in law enforcement, now leading school safety for Central Valley School District.{% endblock %}
+{% block desc %}{{ b.principal }}, {{ pr.years_chief }} years Chief of Police in Liberty Lake, Washington, {{ pr.years_law_enforcement }} years in law enforcement, former head of school safety for Central Valley School District.{% endblock %}
 {% block main %}
 <div class="phead"><div class="wrap"><div class="kicker">{{ b.principal_title }}</div><h1>Brian <em>Asmus</em></h1><p class="lede">{{ pr.years_law_enforcement }} years in law enforcement. {{ pr.years_chief }} of them as Chief of Police. All of them in the business of keeping people safe.</p></div></div>
 <section><div class="wrap two">
   <div class="prose rv">
     <p>{{ pr.chief_detail }} When the City of Liberty Lake stood up its own police department, Brian was the chief who built it — the officers, the technology, the K-9 program, and a community-policing approach that treated education and visibility as seriously as enforcement.</p>
-    <p>In 2020 he retired from the department to take on a different front line: {{ pr.current }}</p>
+    <p>In 2020 he retired from the department and took on a different front line: {{ pr.current }}</p>
     {% if pr.earlier %}<p>{{ pr.earlier }}</p>{% endif %}
     <h3>Public service</h3><ul>{% for x in pr.boards %}<li>{{ x }}</li>{% endfor %}</ul>
     {% if pr.education %}<h3>Education</h3><ul>{% for x in pr.education %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+    {% if pr.credentials %}<h3>Memberships &amp; federal service</h3><ul>{% for x in pr.credentials %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
     <h3>Why Shield Point</h3>
     <p>Most places that need a security plan cannot hire a police chief. Shield Point Strategies exists so they do not have to: the same judgment that ran a department and protects a school district, brought to your building for the time it takes to get it right.</p>
   </div>

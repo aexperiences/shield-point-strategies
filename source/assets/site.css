@@ -98,6 +98,7 @@ section{padding:56px 0} section.alt{background:var(--ink);border-top:1px solid v
 .word::after{content:attr(data-n);position:absolute;right:14px;top:6px;font:800 64px var(--font-d);color:var(--line);line-height:1}
 .word h3{font-size:30px}.word h3 b{color:var(--red2)}.word p{color:var(--grey);margin:0 0 10px}.word a{font:700 14px var(--font-d);letter-spacing:.18em;text-transform:uppercase;color:#fff}
 .word a::after{content:" →"}
+.word a{display:inline-block;margin:0 18px 6px 0}
 @media (min-width:760px){.three{grid-template-columns:repeat(3,1fr)}}
 .svc-list{display:grid;gap:12px}
 .svc{display:grid;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;position:relative;transition:border-color .2s,transform .2s}

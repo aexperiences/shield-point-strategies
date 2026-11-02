@@ -25,24 +25,34 @@
     "tz": "America/Los_Angeles"
   },
   "principal_record": {
-    "_note": "Public record only: KREM (Aug 2020), Central Valley School District site, Spokesman-Review, Liberty Lake Splash, Anthony. Education and earlier service were dropped Oct 31 2026: their only source (The Org) also got his years as chief wrong. Add back only when Brian confirms.",
+    "_note": "Public record plus Brian's own edits (Nov 1 2026, sent through Anthony): boards, healthcare security role, education and credentials below are Brian's words. School-district role is now past tense at his request.",
     "years_law_enforcement": "30",
     "years_chief": "20",
     "chief_of": "Liberty Lake Police Department",
     "chief_detail": "Led the Liberty Lake Police Department from its founding through two decades, building the department, its K-9 program and its community-policing model.",
-    "current": "leading school safety and security for Central Valley School District since September 2020 — a district of fourteen thousand five hundred students across Spokane Valley and Liberty Lake.",
+    "current": "he led school safety and security for Central Valley School District from September 2020 — a district of fourteen thousand five hundred students across Spokane Valley and Liberty Lake.",
     "boards": [
-      "Liberty Lake Fire Commissioner",
-      "Served as Vice Chair, Spokane Regional Emergency Communications board",
-      "Helped establish the Rotary Club of Liberty Lake; past president"
+      "Spokane Valley Fire Department Commissioner",
+      "Serves as Chair of the Spokane Regional Emergency Communications Board",
+      "Charter member and past president of the Liberty Lake Centennial Rotary Club",
+      "Serves on the Liberty Lake Police Foundation Board"
     ],
-    "education": [],
-    "earlier": ""
+    "education": [
+      "Graduate of the Northwest Executive Command College",
+      "Graduate of the FBI National Academy"
+    ],
+    "earlier": "He also served as the Director of Physical Security for a large healthcare provider.",
+    "credentials": [
+      "Life member of the Washington Association of Sheriffs and Police Chiefs",
+      "Life member of the FBI National Academy",
+      "Served on a DEA task force",
+      "Served as law enforcement liaison with the Secret Service presidential protection division"
+    ]
   },
   "hero": {
     "kicker": "Liberty Lake, Washington",
     "title_html": "Know where you stand <em>before</em> the day you need to.",
-    "lede": "Shield Point Strategies helps schools, churches, businesses and public agencies get honest about their risks, plan for the worst day, and train the people who will be there when it comes — led by a police chief of twenty years.",
+    "lede": "Shield Point Strategies helps schools, churches, non-profits, businesses and public agencies get honest about their risks, plan for the worst day, and train the people who will be there when it comes — led by a police chief of twenty years.",
     "cta_main": "Book a walkthrough",
     "cta_second": "Take the readiness check"
   },
@@ -131,16 +141,33 @@
       "slug": "training",
       "word": "Protection",
       "name": "Training",
-      "short": "For staff, leadership, boards and volunteers — what to notice, what to do, what to say.",
+      "short": "For staff, leadership, boards and volunteers — what to notice, what to do, what to say. Plus firearms training from beginner to advanced.",
       "body": [
         "Most people freeze because nobody ever told them what their job is on a bad day. We teach it in plain terms: situational awareness, recognizing concerning behavior, de-escalation, what to do in the first minute of an emergency, and how to work with responders when they arrive.",
-        "Sessions are built for your audience — teachers, ushers, front-desk staff, managers, boards — and fit into a staff meeting or a half day."
+        "Sessions are built for your audience — teachers, ushers, front-desk staff, managers, boards — and fit into a staff meeting or a half day.",
+        "We also provide firearms training for shooters at every level, from the first-time beginner to the advanced shooter."
       ],
       "points": [
         "Emergency response for staff and volunteers",
         "Situational awareness and de-escalation",
         "Front-desk and visitor-management training",
-        "Leadership and crisis-decision training"
+        "Leadership and crisis-decision training",
+        "Firearms training, beginner to advanced shooters"
+      ],
+      "price": "ask us"
+    },
+    {
+      "slug": "executive-protection",
+      "word": "Protection",
+      "name": "Executive Protection",
+      "short": "Armed and unarmed executive protection.",
+      "body": [
+        "We provide both armed and unarmed executive protection, led by a career police chief.",
+        "Tell us who needs protecting, where and when, and we will tell you what it takes."
+      ],
+      "points": [
+        "Armed executive protection",
+        "Unarmed executive protection"
       ],
       "price": "ask us"
     },
@@ -151,7 +178,7 @@
       "short": "Twenty years running a department, offered to yours.",
       "body": [
         "Policy review, leadership development, program design, community-policing strategy, emergency-communications planning and the hundred practical questions of running a small agency well.",
-        "Chief Asmus built the Liberty Lake Police Department from its founding and sits on the regional emergency-communications board. If you are standing up a program, reviewing one, or preparing for an assessment, that experience is available to you."
+        "Chief Asmus built the Liberty Lake Police Department from its founding and chairs the Spokane Regional Emergency Communications Board. If you are standing up a program, reviewing one, or preparing for an assessment, that experience is available to you."
       ],
       "points": [
         "Policy and procedure review",
@@ -166,6 +193,7 @@
   "sectors": [
     "Schools & districts",
     "Churches & places of worship",
+    "Non-profits",
     "Businesses & offices",
     "Clinics & care facilities",
     "Cities, districts & agencies",
