@@ -49,6 +49,7 @@ nav.main a{font:600 15px/1 var(--font-d);letter-spacing:.14em;text-transform:upp
 nav.main a:hover,nav.main a[aria-current]{color:#fff} nav.main a[aria-current]{box-shadow:inset 0 -2px 0 var(--red)}
 .call{display:inline-flex;align-items:center;gap:8px;font:700 15px/1 var(--font-d);letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:#fff;padding:13px 16px;border-radius:999px;white-space:nowrap}
 .call svg{width:16px;height:16px}
+.gear{width:44px;height:44px;flex:none;display:grid;place-items:center;color:#8d9096;border-radius:10px;transition:color .2s}.gear:hover{color:#fff}.gear svg{width:20px;height:20px}
 .menu-btn{width:48px;height:48px;border:1px solid var(--line2);background:none;border-radius:10px;color:#fff;display:grid;place-items:center}
 .menu-btn svg{width:22px;height:22px}
 @media (min-width:900px){nav.main{display:flex}.menu-btn{display:none}}

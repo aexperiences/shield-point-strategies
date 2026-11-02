@@ -17,6 +17,7 @@
 <script>/* always open at the top: no restored scroll, no #section left in the address */(function(){if("scrollRestoration" in history)history.scrollRestoration="manual";if(location.hash&&!document.querySelector("[data-keep-hash]"))history.replaceState(null,"",location.pathname+location.search);addEventListener("load",function(){scrollTo(0,0);});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href^='#']");if(!a||e.defaultPrevented)return;var id=a.getAttribute("href");if(id.length<2)return;var t=document.getElementById(id.slice(1));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});})();</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"{{ b.name }}","description":"{{ b.kind }}","telephone":"{{ b.phone_raw }}","email":"{{ b.email }}","address":{"@type":"PostalAddress","addressLocality":"{{ b.town }}","addressRegion":"WA","addressCountry":"US"},"founder":{"@type":"Person","name":"{{ b.principal }}"}}</script>
 {% block head %}{% endblock %}
+<script src="https://www.aexperiences.com/px.js" data-site="shieldpoint" defer></script>
 </head>
 <body data-page="{{ page }}">
 <a class="skip" href="#main">Skip to content</a>
