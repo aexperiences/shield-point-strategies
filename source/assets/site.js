@@ -55,9 +55,18 @@
       const nx=$$('.qcard',quiz)[k+1];if(nx&&ans[k+1]===null)nx.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}));});
   }
 
-  /* contact form — composes the message; sends by the visitor's own mail or text app. Nothing is stored. */
-  const form=$('#cform'); if(form){form.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(form);
-    const body=`Name: ${f.get('name')}\nOrganization: ${f.get('org')}\nI am responsible for: ${f.get('kind')}\nPhone: ${f.get('phone')}\n\n${f.get('msg')}`;
+  function alertBox(f,m){let a=$('.ferr',f);if(!a){a=document.createElement('p');a.className='ferr';a.setAttribute('role','alert');a.style.cssText='color:#ff6b6b;font-weight:600;margin:8px 0 0';f.insertBefore(a,$('button[type=submit]',f));}a.textContent=m;}
+  /* contact form (Nov 2 2026) — goes straight to Brian's Leads in his office. If that cannot be reached, it falls back to
+     composing the message in the visitor's own mail or text app, so an inquiry is never lost. */
+  const form=$('#cform'); if(form){form.addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(form);
+    if(!f.get('email')&&!f.get('phone')){alertBox(form,'Add an email or a phone number so Brian can reach you.');return;}
+    const btn=$('button[type=submit]',form); if(btn){btn.disabled=true;btn.dataset.t=btn.textContent;btn.textContent='Sending…';}
+    try{ const r=await fetch('https://aexperiences.studio/api/sp',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'inquiry',name:f.get('name'),email:f.get('email'),phone:f.get('phone'),org:f.get('org'),message:'I am responsible for: '+(f.get('kind')||'')+'\n\n'+(f.get('msg')||''),page:location.pathname,hp:f.get('website')})});
+      const j=await r.json().catch(()=>({})); if(r.ok&&j.ok){ $$('label,button[type=submit],.note',form).forEach(x=>x.style.display='none'); const t=$('#thanks'); t.classList.add('show'); t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}); return; }
+      if(j&&j.message){alertBox(form,j.message); if(btn){btn.disabled=false;btn.textContent=btn.dataset.t;} return;}
+    }catch(_){}
+    if(btn){btn.disabled=false;btn.textContent=btn.dataset.t;}
+    const body=`Name: ${f.get('name')}\nEmail: ${f.get('email')}\nOrganization: ${f.get('org')}\nI am responsible for: ${f.get('kind')}\nPhone: ${f.get('phone')}\n\n${f.get('msg')}`;
     const subj='Shield Point — '+(f.get('kind')||'a conversation'); const sent=$('#sent');
     $('.mail',sent).href='mailto:'+data.email+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
     $('.sms',sent).href='sms:'+data.sms+'?&body='+encodeURIComponent(body.slice(0,600)); sent.classList.add('show'); sent.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});});}

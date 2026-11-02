@@ -8,10 +8,13 @@
     <label>Your name<input name="name" required autocomplete="name"></label>
     <label>Organization<input name="org" autocomplete="organization"></label>
     <label>I am responsible for<select name="kind"><option>A school or district</option><option>A church or place of worship</option><option>A business or office</option><option>A clinic or care facility</option><option>A city, district or agency</option><option>An event or venue</option><option>Something else</option></select></label>
+    <label>Email<input name="email" type="email" autocomplete="email"></label>
     <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+    <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     <label>What worries you<textarea name="msg" required placeholder="What has happened, what you have in place, what you want to know."></textarea></label>
     <button class="btn red" type="submit">{{ c.button }}</button>
-    <p class="note">This form opens your own mail or text app with the message written for you — nothing is stored on this site.</p>
+    <p class="note">Your message goes straight to Brian. Leave an email or a phone number so he can reach you.</p>
+    <div class="sent" id="thanks" role="status"><p><strong>Thank you. Brian has your message.</strong> He will be in touch. If it is urgent, call <a href="tel:{{ b.phone_raw }}">{{ b.phone }}</a>.</p></div>
     <div class="sent" id="sent"><p><strong>Your message is written.</strong> Send it the way you like:</p><div class="btns" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn red mail" href="#">Send by email</a><a class="btn sms" href="#">Send by text</a></div></div>
   </form>
   <div class="cinfo rv">
