@@ -39,7 +39,7 @@ for cx in CONCEPTS:
     for sub, tpl in pages:
         depth = (cx['slug'] + '/' + sub).count('/'); root = '../' * depth; croot = '../' * sub.count('/')
         ctx = dict(b=b, pr=C['principal_record'], layers=C['layers'], si=C['services_intro'], services=C['services'], sectors=C['sectors'],
-                   p=C['process'], faqs=C['faqs'], c=C['contact'], cx=cx, root=root, croot=croot or './', base=base, path=cx['slug'] + '/' + sub, year=year,
+                   p=C['process'], faqs=C['faqs'], c=C['contact'], cx=cx, root=root, croot=croot or './', base=base, path=cx['slug'] + '/' + sub, canon=(base + sub) if sub in ('services/', 'about/', 'contact/') else (base + cx['slug'] + '/' + sub), year=year,
                    page=sub.strip('/') or 'home', wt=X['walkthrough'], ninety=X['ninety'], tt=X['tabletop'],
                    kit={'email': b['email'], 'sms': b['sms_raw'], 'tz': b['tz'], 'root': root, 'phone': b['phone'], 'tagline': b['tagline']})
         html = env.get_template(tpl).render(**ctx)
@@ -63,7 +63,7 @@ sm = os.path.join(OUT, 'sitemap.xml')
 if os.path.exists(sm):
     x = open(sm).read(); extra = ''
     for cx in CONCEPTS:
-        for sub in [''] + ['services/', 'about/', 'contact/'] + [e[0] for e in cx['extra']]:
+        for sub in [''] + [e[0] for e in cx['extra']]:   # the concept copies of services/about/contact point at the main pages (canonical), so they stay out of the map
             u = base + cx['slug'] + '/' + sub
             if u not in x: extra += '<url><loc>%s</loc></url>\n' % u
     open(sm, 'w').write(x.replace('</urlset>', extra + '</urlset>'))

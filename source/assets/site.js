@@ -5,7 +5,7 @@
   const data=JSON.parse(($('#page-data')||{textContent:'{}'}).textContent||'{}');
 
   /* skin: night (default) or steel — a lighter take that still fits the scheme */
-  try{const k=localStorage.getItem('sps-skin');if(k==='steel')document.documentElement.dataset.skin='steel';}catch(e){}
+  try{localStorage.removeItem('sps-skin');}catch(e){}  /* one look now: the Night/Steel switch came off the site (Nov 2 2026) */
   $$('.skin button').forEach(b=>{b.setAttribute('aria-pressed',String((document.documentElement.dataset.skin||'night')===b.dataset.skin));
     b.addEventListener('click',()=>{const s=b.dataset.skin;if(s==='night')delete document.documentElement.dataset.skin;else document.documentElement.dataset.skin=s;
       try{localStorage.setItem('sps-skin',s);}catch(e){} $$('.skin button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));});});

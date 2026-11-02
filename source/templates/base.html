@@ -46,14 +46,13 @@
 <main id="main">
 {% block main %}{% endblock %}
 </main>
-<div class="install" id="install"><div class="wrap"><img src="{{ root }}assets/icon-192.png" alt=""><span class="t">Put Shield Point on your home screen — it opens like an app and works offline.</span><button class="go">Install</button><button class="x" aria-label="Not now">×</button></div></div>
 <footer>
   <div class="wrap">
     <img class="lock" src="{{ root }}assets/logo-lockup.png" alt="{{ b.name }} — {{ b.tagline }}">
     <div class="cols">
       <div><h4>Reach us</h4><div class="list"><a href="tel:{{ b.phone_raw }}">{{ b.phone }}</a><a href="mailto:{{ b.email }}">{{ b.email }}</a><span>{{ b.town }}, {{ b.state }}</span></div></div>
       <div><h4>Pages</h4><div class="list">{% for n in nav %}<a href="{{ root }}{{ n.href }}">{{ n.label }}</a>{% endfor %}</div></div>
-      <div><h4>Look</h4><div class="skin" role="group" aria-label="Site look"><button data-skin="night" aria-pressed="true">Night</button><button data-skin="steel" aria-pressed="false">Steel</button></div><p style="margin-top:14px;font-size:13px;color:var(--grey2)">{{ b.principal }}, {{ b.principal_title }}. {{ b.kind }}.</p></div>
+      <div><h4>Shield Point</h4><p style="margin-top:0;font-size:13px;color:var(--grey2)">{{ b.principal }}, {{ b.principal_title }}. {{ b.kind }}.</p></div>
     </div>
     <div class="credit"><span>© {{ year }} {{ b.name }}. Built by <a href="https://aexperiences.studio/" rel="noopener">Accelerated Experiences LLC</a> · accelerated web</span><img src="{{ root }}assets/ae-mark.png" alt="Accelerated Experiences LLC"></div>
   </div>
