@@ -51,7 +51,7 @@
     <img class="lock" src="{{ root }}assets/logo-lockup.png" alt="{{ b.name }} — {{ b.tagline }}">
     <div class="cols">
       <div><h4>Reach us</h4><div class="list"><a href="tel:{{ b.phone_raw }}">{{ b.phone }}</a><a href="mailto:{{ b.email }}">{{ b.email }}</a><span>{{ b.town }}, {{ b.state }}</span></div></div>
-      <div><h4>Pages</h4><div class="list">{% for n in nav %}<a href="{{ root }}{{ n.href }}">{{ n.label }}</a>{% endfor %}</div></div>
+      <div><h4>Pages</h4><div class="list">{% for n in nav %}<a href="{{ root }}{{ n.href }}">{{ n.label }}</a>{% endfor %}<a href="{{ root }}directory/">Safe Places directory</a></div></div>
       <div><h4>Shield Point</h4><p style="margin-top:0;font-size:13px;color:var(--grey2)">{{ b.principal }}, {{ b.principal_title }}. {{ b.kind }}.</p></div>
     </div>
     <div class="credit"><span>© {{ year }} {{ b.name }}. Built by <a href="https://aexperiences.studio/" rel="noopener">Accelerated Experiences LLC</a> · accelerated web</span><img src="{{ root }}assets/ae-mark.png" alt="Accelerated Experiences LLC"></div>

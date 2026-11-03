@@ -11,3 +11,7 @@ Facts that are easy to get wrong (see the CONFIRM notes in config.json):
 What is in it: Home (opening moment + the Layers plate) · Services + four service pages · The Layers (scroll walk) · Readiness check (ten questions → reading → text/email to Brian) · About · Contact (form composes an email or text; nothing is stored) · installs as an app, works offline · Night and Steel skins · phone first (390) and laptop (1440), both checked by the website machine's test.
 
 Build (from the repo root): `python3 source/build.py --out . --base https://<domain>/` — writes every page into the repo root, which Vercel serves as-is. The logo pictures and icons live in `assets/`; the editable copy of the logo is `source/assets/logo-source.jpg`.
+
+## Safe Places directory (Nov 3 2026)
+`/directory/` — 8,558 schools, churches, clinics, non-profits, agencies and businesses in Eastern WA and North Idaho (Brian's target list, Vertical Scraper run `shieldpoint-ewa-nid-nov02.json` in aehub). Rebuild: `python3 source/directory/build.py` (reads the aehub run file; copy `directory/dir.css` and `dir.js` back if the folder is wiped).
+**After any `source/build.py` run, re-add the directory URLs to `sitemap.xml`** (build.py rewrites it without them). The footer link lives in `source/templates/base.html`.
