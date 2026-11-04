@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Privacy — {{ b.name }}{% endblock %}
+{% block desc %}How the {{ b.name }} website handles what you send and what it counts. Plain words, no fine print.{% endblock %}
+{% block main %}
+<div class="phead"><div class="wrap"><div class="kicker">Privacy</div><h1>What this site <em>keeps</em></h1><p class="lede">Plain words. No fine print.</p></div></div>
+<section><div class="wrap"><div class="prose rv">
+<h3>When you contact us</h3>
+<p>If you fill in the contact form, what you type (your name, email, phone, organization and message) goes to {{ b.principal }} at {{ b.name }} so he can answer you. It is kept in his office records. It is never sold, rented or shared with anyone else.</p>
+<p>The readiness check runs on your own device. Your answers are not sent anywhere unless you choose to text or email the result to us.</p>
+<h3>What the site counts</h3>
+<p>The site counts visits: which pages were opened and roughly where visitors come from. It does not collect your name or email, and it sets no advertising cookies. To tell a returning visitor apart, it keeps a random number in your own browser. You can clear it any time by clearing your browser's site data.</p>
+<p>The lettering on the site comes from Google Fonts, so your browser asks Google for the font files.</p>
+<h3>Questions, or want your information removed?</h3>
+<p>Call or text <a href="tel:{{ b.phone_raw }}">{{ b.phone }}</a>, or email <a href="mailto:{{ b.email }}">{{ b.email }}</a>. We will remove what you sent us.</p>
+<p style="font-size:13px;color:var(--grey2)">Updated {{ updated }}.</p>
+</div></div></section>
+{% endblock %}

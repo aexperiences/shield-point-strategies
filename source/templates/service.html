@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ s.name }} — {{ b.name }}{% endblock %}
+{% block title %}{% if s.name|length > 38 %}{{ s.name }} · Shield Point{% else %}{{ s.name }} — {{ b.name }}{% endif %}{% endblock %}
 {% block desc %}{{ s.short }}{% endblock %}
 {% block main %}
 <div class="phead"><div class="wrap"><div class="kicker">{{ s.word }}</div><h1>{{ s.name }}</h1><p class="lede">{{ s.short }}</p></div></div>

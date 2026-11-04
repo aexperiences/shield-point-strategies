@@ -7,7 +7,7 @@
 <meta name="description" content="{% block desc %}{{ b.kind }} in {{ b.town }}, {{ b.state }}. {{ b.tagline }}{% endblock %}">
 <link rel="canonical" href="{{ base }}{{ path }}">
 {% if noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
-<meta property="og:title" content="{{ self.title() }}"><meta property="og:description" content="{{ self.desc() }}"><meta property="og:image" content="{{ base }}og.png"><meta property="og:type" content="website">
+<meta property="og:title" content="{{ self.title() }}"><meta property="og:description" content="{{ self.desc() }}"><meta property="og:image" content="{{ base }}og.png"><meta property="og:type" content="website"><meta property="og:url" content="{{ base }}{{ path }}"><meta property="og:site_name" content="{{ b.name }}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{{ self.title() }}"><meta name="twitter:description" content="{{ self.desc() }}"><meta name="twitter:image" content="{{ base }}og.png">
 <meta name="theme-color" content="#050505">
 <link rel="icon" href="{{ root }}assets/icon-192.png"><link rel="apple-touch-icon" href="{{ root }}assets/icon-180.png">
 <link rel="manifest" href="{{ root }}manifest.webmanifest">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="{{ root }}assets/site.css">
 <script>/* always open at the top: no restored scroll, no #section left in the address */(function(){if("scrollRestoration" in history)history.scrollRestoration="manual";if(location.hash&&!document.querySelector("[data-keep-hash]"))history.replaceState(null,"",location.pathname+location.search);addEventListener("load",function(){scrollTo(0,0);});document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href^='#']");if(!a||e.defaultPrevented)return;var id=a.getAttribute("href");if(id.length<2)return;var t=document.getElementById(id.slice(1));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});})();</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"{{ b.name }}","description":"{{ b.kind }}","telephone":"{{ b.phone_raw }}","email":"{{ b.email }}","address":{"@type":"PostalAddress","addressLocality":"{{ b.town }}","addressRegion":"WA","addressCountry":"US"},"url":"{{ base }}","founder":{"@type":"Person","name":"{{ b.principal }}"}}</script>
+<script type="application/ld+json">{{ ld|safe }}</script>
 <script src="https://www.aexperiences.com/px.js" data-site="shieldpoint" defer></script>
 </head>
 <body data-page="{{ page }}">
@@ -51,7 +51,7 @@
     <img class="lock" src="{{ root }}assets/logo-lockup.png" alt="{{ b.name }} — {{ b.tagline }}">
     <div class="cols">
       <div><h4>Reach us</h4><div class="list"><a href="tel:{{ b.phone_raw }}">{{ b.phone }}</a><a href="mailto:{{ b.email }}">{{ b.email }}</a><span>{{ b.town }}, {{ b.state }}</span></div></div>
-      <div><h4>Pages</h4><div class="list">{% for n in nav %}<a href="{{ root }}{{ n.href }}">{{ n.label }}</a>{% endfor %}<a href="{{ root }}directory/">Safe Places directory</a></div></div>
+      <div><h4>Pages</h4><div class="list">{% for n in nav %}<a href="{{ root }}{{ n.href }}">{{ n.label }}</a>{% endfor %}<a href="{{ root }}directory/">Safe Places directory</a><a href="{{ root }}privacy/">Privacy</a></div></div>
       <div><h4>Shield Point</h4><p style="margin-top:0;font-size:13px;color:var(--grey2)">{{ b.principal }}, {{ b.principal_title }}. {{ b.kind }}.</p></div>
     </div>
     <div class="credit"><span>© {{ year }} {{ b.name }}. Built by <a href="https://aexperiences.studio/" rel="noopener">Accelerated Experiences LLC</a> · accelerated web</span><img src="{{ root }}assets/ae-mark.png" alt="Accelerated Experiences LLC"></div>

@@ -15,3 +15,9 @@ Build (from the repo root): `python3 source/build.py --out . --base https://<dom
 ## Safe Places directory (Nov 3 2026)
 `/directory/` — 8,558 schools, churches, clinics, non-profits, agencies and businesses in Eastern WA and North Idaho (Brian's target list, Vertical Scraper run `shieldpoint-ewa-nid-nov02.json` in aehub). Rebuild: `python3 source/directory/build.py` (reads the aehub run file; copy `directory/dir.css` and `dir.js` back if the folder is wiped).
 **After any `source/build.py` run, re-add the directory URLs to `sitemap.xml`** (build.py rewrites it without them). The footer link lives in `source/templates/base.html`.
+
+## Search and answer engines (Nov 4 2026)
+- Every page carries one structured-data graph (business + Brian + website), built in `source/build.py` (`LD`), plus Open Graph and Twitter cards.
+- `/privacy/` (template `privacy.html`) is in the footer and the sitemap. **After a `source/build.py` run, re-add `/privacy/` and the directory URLs to `sitemap.xml`.**
+- `/llms.txt` is the plain guide for AI answer tools. `/4f42cabcab1de2c042d5db0b8194c2ae.txt` is the IndexNow key (Bing and others get new pages pinged).
+- Titles stay under 65 characters (SEO Watch rule).

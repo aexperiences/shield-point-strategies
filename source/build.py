@@ -14,13 +14,25 @@ NAV = [{'href': '', 'label': 'Home'}, {'href': 'services/', 'label': 'Services'}
        {'href': 'readiness/', 'label': 'Readiness check'}, {'href': 'about/', 'label': 'About'}, {'href': 'contact/', 'label': 'Contact'}]
 layer_names = {L['id']: L['name'] for L in C['layers']}
 pages = [('', 'home.html', {}), ('services/', 'services.html', {}), ('approach/', 'approach.html', {}), ('readiness/', 'readiness.html', {}),
-         ('about/', 'about.html', {}), ('contact/', 'contact.html', {})] + [('services/%s/' % s['slug'], 'service.html', {'s': s}) for s in C['services']]
+         ('about/', 'about.html', {}), ('contact/', 'contact.html', {}), ('privacy/', 'privacy.html', {'updated': 'November 4, 2026'})] + [('services/%s/' % s['slug'], 'service.html', {'s': s}) for s in C['services']]
 os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
 for f in ('site.css', 'site.js'): shutil.copy(os.path.join(HERE, 'assets', f), os.path.join(OUT, 'assets', f))  # the pictures already live in out/assets
 year = datetime.date.today().year; b = C['business']
+# Search and answer engines (Nov 4 2026): one structured-data graph on every page — the business, Brian, the website.
+LD = json.dumps({'@context': 'https://schema.org', '@graph': [
+  {'@type': 'ProfessionalService', '@id': base + '#org', 'name': b['name'], 'slogan': b['tagline'], 'description': b['kind'] + '. ' + C['hero'].get('lede', ''),
+   'url': base, 'logo': base + 'assets/logo-shield.png', 'image': base + 'og.png', 'telephone': b['phone_raw'], 'email': b['email'],
+   'address': {'@type': 'PostalAddress', 'addressLocality': b['town'], 'addressRegion': 'WA', 'addressCountry': 'US'},
+   'geo': {'@type': 'GeoCoordinates', 'latitude': b['lat'], 'longitude': b['lon']},
+   'areaServed': [{'@type': 'AdministrativeArea', 'name': n} for n in ('Liberty Lake, WA', 'Spokane County, WA', 'Eastern Washington', 'Kootenai County, ID', 'North Idaho')],
+   'knowsAbout': [s['name'] for s in C['services']],
+   'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Services', 'itemListElement': [{'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': s['name'], 'description': s['short'], 'url': base + 'services/' + s['slug'] + '/'}} for s in C['services']]},
+   'founder': {'@id': base + '#brian'}},
+  {'@type': 'Person', '@id': base + '#brian', 'name': b['principal'], 'jobTitle': b['principal_title'], 'worksFor': {'@id': base + '#org'}, 'url': base + 'about/'},
+  {'@type': 'WebSite', '@id': base + '#site', 'name': b['name'], 'url': base, 'publisher': {'@id': base + '#org'}, 'inLanguage': 'en-US'}]}, ensure_ascii=False).replace('</', '<\\/')
 def render(path, tpl, extra, page_name=None):
     depth = path.count('/'); root = '../' * depth
-    ctx = dict(b=b, pr=C['principal_record'], h=C['hero'], layers=C['layers'], si=C['services_intro'], services=C['services'], sectors=C['sectors'],
+    ctx = dict(ld=LD, b=b, pr=C['principal_record'], h=C['hero'], layers=C['layers'], si=C['services_intro'], services=C['services'], sectors=C['sectors'],
                p=C['process'], r=C['readiness'], faqs=C['faqs'], c=C['contact'], nav=NAV, root=root, base=base, path=path, year=year,
                layer_names=layer_names, page=page_name or (path.strip('/').split('/')[0] or 'home'), noindex=False,
                page_data={'layers': C['layers'], 'readiness': C['readiness'], 'layerNames': layer_names, 'sms': b['sms_raw'], 'email': b['email'],
@@ -29,7 +41,7 @@ def render(path, tpl, extra, page_name=None):
     assert '{{' not in html and '{%' not in html, 'unrendered template in ' + path
     d = os.path.join(OUT, path); os.makedirs(d, exist_ok=True); open(os.path.join(d, 'index.html'), 'w').write(html)
 for path, tpl, extra in pages: render(path, tpl, extra)
-html404 = env.get_template('404.html').render(b=b, nav=NAV, root='/', base=base, path='404', year=year, page='404', noindex=True, page_data={'root': '/', 'rootPath': ''})
+html404 = env.get_template('404.html').render(ld=LD, b=b, nav=NAV, root='/', base=base, path='404', year=year, page='404', noindex=True, page_data={'root': '/', 'rootPath': ''})
 open(os.path.join(OUT, '404.html'), 'w').write(html404)
 json.dump({'name': b['name'], 'short_name': b['short'], 'description': b['kind'] + '. ' + b['tagline'], 'start_url': '/', 'scope': '/', 'display': 'standalone',
            'background_color': '#050505', 'theme_color': '#050505', 'icons': [{'src': '/assets/icon-192.png', 'sizes': '192x192', 'type': 'image/png'},
