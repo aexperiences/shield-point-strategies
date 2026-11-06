@@ -42,11 +42,11 @@ def page(depth,title,desc,canon,body):
     h=re.sub(r'(<link rel="canonical" href=")[^"]*','\\g<1>'+canon,h)
     h=re.sub(r'(<meta property="og:title" content=")[^"]*','\\g<1>'+E(title),h)
     h=re.sub(r'(<meta property="og:description" content=")[^"]*','\\g<1>'+E(desc),h)
-    h=re.sub(r'<script type="application/json" id="page-data">.*?</script>','<script type="application/json" id="page-data">'+json.dumps({"email":"spsasmus@gmail.com","root":pre,"rootPath":"","sms":"15099983732","tz":"America/Los_Angeles"})+'</script>',h,flags=re.S)
+    h=re.sub(r'<script type="application/json" id="page-data">.*?</script>','<script type="application/json" id="page-data">'+json.dumps({"email":"info@shieldpoint.training","root":pre,"rootPath":"","sms":"15099983732","tz":"America/Los_Angeles"})+'</script>',h,flags=re.S)
     h=h.replace('<body data-page="readiness">','<body data-page="directory">')
     h=h.replace('</head>','<link rel="stylesheet" href="'+pre+'directory/dir.css">\n</head>')
     full=h+'\n<main id="main">\n'+body+'\n</main>\n'+FOOT.replace('../',pre)
-    return re.sub(r'<script type="application/json" id="page-data">.*?</script>','<script type="application/json" id="page-data">'+json.dumps({"email":"spsasmus@gmail.com","root":pre,"rootPath":"","sms":"15099983732","tz":"America/Los_Angeles"})+'</script>',full,flags=re.S)
+    return re.sub(r'<script type="application/json" id="page-data">.*?</script>','<script type="application/json" id="page-data">'+json.dumps({"email":"info@shieldpoint.training","root":pre,"rootPath":"","sms":"15099983732","tz":"America/Los_Angeles"})+'</script>',full,flags=re.S)
 BADGE='<span class="sp-badge" title="Completed Shield Point training">Safety Trained</span>'
 def card(r,pre):
     bits=[]
