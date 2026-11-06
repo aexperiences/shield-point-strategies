@@ -56,5 +56,7 @@ self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new
 """ % (h, json.dumps(files)))
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %ssitemap.xml\n' % base)
 open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join('<url><loc>%s%s</loc></url>\n' % (base, p) for p, _, _ in pages) + '</urlset>\n')
-open(os.path.join(OUT, 'vercel.json'), 'w').write(json.dumps({'cleanUrls': True, 'trailingSlash': True, 'headers': [{'source': '/sw.js', 'headers': [{'key': 'Cache-Control', 'value': 'no-cache'}]}, {'source': '/(.*)', 'headers': [{'key': 'X-Content-Type-Options', 'value': 'nosniff'}]}]}, indent=1))
+# vercel.json is copied whole from the repo root (it carries the security headers AE Comply checks; Nov 6 2026).
+_RV = os.path.join(os.path.dirname(HERE), 'vercel.json')
+if os.path.abspath(OUT) != os.path.dirname(HERE): shutil.copyfile(_RV, os.path.join(OUT, 'vercel.json'))
 print('built', len(pages), 'pages →', OUT, 'cache', h)
