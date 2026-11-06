@@ -3,6 +3,15 @@
  "trailingSlash": true,
  "headers": [
   {
+   "source": "/.well-known/mta-sts.txt",
+   "headers": [
+    {
+     "key": "Content-Type",
+     "value": "text/plain; charset=utf-8"
+    }
+   ]
+  },
+  {
    "source": "/sw.js",
    "headers": [
     {
