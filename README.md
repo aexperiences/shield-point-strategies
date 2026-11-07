@@ -21,3 +21,6 @@ Build (from the repo root): `python3 source/build.py --out . --base https://<dom
 - `/privacy/` (template `privacy.html`) is in the footer and the sitemap. **After a `source/build.py` run, re-add `/privacy/` and the directory URLs to `sitemap.xml`.**
 - `/llms.txt` is the plain guide for AI answer tools. `/4f42cabcab1de2c042d5db0b8194c2ae.txt` is the IndexNow key (Bing and others get new pages pinged).
 - Titles stay under 65 characters (SEO Watch rule).
+
+## Growth Engine town pages (Nov 6 2026)
+`/safety/<town>/` pages are made by the hub's Shield Point Growth Engine (aehub `machines/growth-engine-shieldpoint/`), staged for Anthony's yes and written here by its `publish.mjs` only after it. **After any `source/build.py` run, re-add the `/safety/` URLs to `sitemap.xml` too.**
